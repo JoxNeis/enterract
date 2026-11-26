@@ -1,0 +1,22 @@
+@import '../../styles/base.css';
+
+.erp-date-time-picker__inputs {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+}
+
+.erp-date-time-picker__inputs > .erp-date-picker {
+  flex: 3;
+}
+
+.erp-date-time-picker__inputs > .erp-time-picker {
+  flex: 2;
+}
+
+.erp-date-time-picker__zone {
+  flex: none;
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+  white-space: nowrap;
+}

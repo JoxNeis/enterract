@@ -1,0 +1,48 @@
+@import '../../styles/base.css';
+
+.erp-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-1);
+  min-width: 0;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size);
+  color: var(--erp-color-text);
+}
+
+.erp-form-field[data-layout='horizontal'] {
+  display: grid;
+  grid-template-columns: minmax(8rem, 30%) 1fr;
+  align-items: start;
+  gap: var(--erp-space-3);
+}
+
+.erp-form-field[data-layout='horizontal'] .erp-form-field__label-row {
+  padding-top: 0.5rem;
+}
+
+.erp-form-field__label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+}
+
+.erp-form-field__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-1);
+  min-width: 0;
+}
+
+.erp-form-field__messages {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--erp-space-2);
+}
+
+.erp-form-field__message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}

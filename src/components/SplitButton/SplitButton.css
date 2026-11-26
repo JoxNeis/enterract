@@ -1,0 +1,22 @@
+@import '../Button/Button.css';
+
+.erp-split-button {
+  display: inline-flex;
+}
+
+.erp-split-button__main.erp-button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.erp-split-button__toggle.erp-button {
+  padding-inline: 0.5rem;
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.erp-split-button[data-variant='primary'] .erp-split-button__toggle.erp-button,
+.erp-split-button[data-variant='danger'] .erp-split-button__toggle.erp-button {
+  border-left-color: rgb(255 255 255 / 0.35);
+}

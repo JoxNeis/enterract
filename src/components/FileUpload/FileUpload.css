@@ -1,0 +1,105 @@
+@import '../../styles/base.css';
+
+.erp-file-upload__body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--erp-space-2);
+}
+
+.erp-file-upload__body > .erp-button {
+  align-self: flex-start;
+}
+
+.erp-file-upload__dropzone {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--erp-space-2);
+  padding: var(--erp-space-5) var(--erp-space-4);
+  color: var(--erp-color-text-muted);
+  text-align: center;
+  background: var(--erp-color-bg-subtle);
+  border: 2px dashed var(--erp-color-border);
+  border-radius: var(--erp-radius-lg);
+  transition: border-color var(--erp-transition), background var(--erp-transition);
+}
+
+.erp-file-upload__dropzone[data-size='sm'] {
+  padding: var(--erp-space-2) var(--erp-space-3);
+}
+
+.erp-file-upload__dropzone[data-dragging] {
+  color: var(--erp-color-primary);
+  background: var(--erp-color-primary-subtle);
+  border-color: var(--erp-color-primary);
+}
+
+.erp-file-upload__dropzone[data-invalid] {
+  border-color: var(--erp-color-danger);
+}
+
+.erp-file-upload__dropzone[data-disabled] {
+  opacity: 0.6;
+}
+
+.erp-file-upload__icon {
+  font-size: 1.25rem;
+}
+
+.erp-file-upload__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.erp-file-upload__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto minmax(5rem, 8rem) auto auto;
+  align-items: center;
+  gap: var(--erp-space-2);
+  padding: var(--erp-space-1) var(--erp-space-2);
+  font-size: var(--erp-font-size-sm);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius);
+}
+
+.erp-file-upload__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.erp-file-upload__size {
+  color: var(--erp-color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-file-upload__progress {
+  width: 100%;
+  height: 0.375rem;
+  accent-color: var(--erp-color-primary);
+}
+
+.erp-file-upload__state {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--erp-space-1);
+  font-size: var(--erp-font-size-xs);
+}
+
+.erp-file-upload__item[data-status='done'] .erp-file-upload__state {
+  color: var(--erp-color-success);
+}
+
+.erp-file-upload__item[data-status='error'] .erp-file-upload__state {
+  color: var(--erp-color-danger);
+}
+
+.erp-file-upload__item[data-status='cancelled'] {
+  color: var(--erp-color-text-muted);
+}

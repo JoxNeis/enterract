@@ -1,0 +1,82 @@
+@import '../../styles/base.css';
+
+.erp-kpi-card {
+  font-family: var(--erp-font-family);
+  color: var(--erp-color-text);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius-lg);
+}
+
+.erp-kpi-card__content,
+.erp-kpi-card__button {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-1);
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--erp-space-4);
+  text-align: start;
+}
+
+.erp-kpi-card__button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+.erp-kpi-card__button:hover {
+  background: var(--erp-color-bg-subtle);
+}
+
+.erp-kpi-card__button:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-kpi-card__label {
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-kpi-card__value {
+  font-size: var(--erp-font-size-2xl);
+  font-weight: var(--erp-font-weight-bold);
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-kpi-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--erp-space-2);
+  font-size: var(--erp-font-size-xs);
+}
+
+.erp-kpi-card__delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: var(--erp-font-weight-bold);
+}
+
+.erp-kpi-card__delta[data-tone='good'] {
+  color: var(--erp-color-success);
+}
+
+.erp-kpi-card__delta[data-tone='bad'] {
+  color: var(--erp-color-danger);
+}
+
+.erp-kpi-card__delta[data-tone='neutral'],
+.erp-kpi-card__delta-label {
+  color: var(--erp-color-text-muted);
+}
+
+.erp-kpi-card__spark {
+  margin-left: auto;
+}

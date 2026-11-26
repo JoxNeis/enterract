@@ -1,0 +1,5 @@
+@import '../../styles/base.css';
+
+.erp-search-field .erp-input-shell__input::-webkit-search-cancel-button {
+  display: none;
+}

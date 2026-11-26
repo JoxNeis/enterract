@@ -1,0 +1,79 @@
+@import '../../styles/base.css';
+
+.erp-signature__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  max-width: 30rem;
+}
+
+.erp-signature__statement {
+  margin: 0;
+  font-size: var(--erp-font-size-sm);
+}
+
+.erp-signature__modes {
+  display: inline-flex;
+}
+
+.erp-signature__modes button {
+  padding: 0.25rem 0.75rem;
+  font: inherit;
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border);
+  cursor: pointer;
+}
+
+.erp-signature__modes button + button {
+  margin-left: -1px;
+}
+
+.erp-signature__modes button[aria-checked='true'] {
+  color: var(--erp-color-on-primary);
+  background: var(--erp-color-primary);
+  border-color: var(--erp-color-primary);
+}
+
+.erp-signature__modes button:focus-visible {
+  position: relative;
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-signature__pad {
+  width: 100%;
+  aspect-ratio: 480 / 140;
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border);
+  border-bottom: 2px solid var(--erp-color-border-strong);
+  border-radius: var(--erp-radius);
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.erp-signature__pad[data-mode='type'] {
+  cursor: default;
+}
+
+.erp-signature__body[data-invalid] .erp-signature__pad {
+  border-color: var(--erp-color-danger);
+}
+
+.erp-signature__typed {
+  margin: 0;
+  font-family: 'Segoe Script', 'Brush Script MT', cursive;
+  font-size: 1.75rem;
+}
+
+.erp-signature__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.erp-signature__line {
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}

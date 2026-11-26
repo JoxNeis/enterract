@@ -1,0 +1,12 @@
+@import '../../styles/base.css';
+
+.erp-cascading-select__levels {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--erp-space-3);
+}
+
+.erp-cascading-select__levels[data-orientation='vertical'] {
+  grid-auto-flow: row;
+}

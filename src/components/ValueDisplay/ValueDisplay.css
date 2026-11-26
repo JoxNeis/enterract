@@ -1,0 +1,51 @@
+@import '../../styles/base.css';
+
+.erp-value-display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size);
+  color: var(--erp-color-text);
+}
+
+.erp-value-display[data-layout='horizontal'] {
+  display: grid;
+  grid-template-columns: minmax(8rem, 30%) 1fr;
+  gap: var(--erp-space-3);
+}
+
+.erp-value-display__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--erp-space-1);
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-value-display__value {
+  overflow-wrap: anywhere;
+}
+
+.erp-value-display[data-type='number'] .erp-value-display__value,
+.erp-value-display[data-type='currency'] .erp-value-display__value,
+.erp-value-display[data-type='percent'] .erp-value-display__value {
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-value-display[data-empty] .erp-value-display__value {
+  color: var(--erp-color-text-muted);
+}
+
+.erp-value-display__calc {
+  display: inline-flex;
+  color: var(--erp-color-info);
+  border-radius: var(--erp-radius-sm);
+  cursor: help;
+}
+
+.erp-value-display__calc:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}

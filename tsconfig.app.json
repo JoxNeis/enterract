@@ -35,6 +35,6 @@
 	"include": [
 		"src",
 		".storybook/main.ts",
-		".storybook/preview.ts"
+		".storybook/preview.tsx"
 	]
 }

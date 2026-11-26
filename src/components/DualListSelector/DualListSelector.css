@@ -1,0 +1,41 @@
+@import '../../styles/base.css';
+
+.erp-dual-list__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: var(--erp-space-3);
+  align-items: stretch;
+}
+
+.erp-dual-list__pane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  min-width: 0;
+}
+
+.erp-dual-list__title {
+  font-size: var(--erp-font-size-sm);
+  font-weight: var(--erp-font-weight-medium);
+}
+
+.erp-dual-list__count {
+  font-weight: normal;
+  color: var(--erp-color-text-muted);
+}
+
+.erp-dual-list__list {
+  flex: 1;
+  min-height: 12rem;
+  max-height: 18rem;
+  overflow: auto;
+  border: 1px solid var(--erp-color-border);
+  border-radius: var(--erp-radius);
+}
+
+.erp-dual-list__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--erp-space-1);
+}

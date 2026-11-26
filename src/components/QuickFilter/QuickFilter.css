@@ -1,0 +1,51 @@
+@import '../../styles/base.css';
+
+.erp-quick-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--erp-space-2);
+  font-family: var(--erp-font-family);
+}
+
+.erp-quick-filter__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  font: inherit;
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border);
+  border-radius: var(--erp-radius-pill);
+  cursor: pointer;
+}
+
+.erp-quick-filter__chip:hover {
+  background: var(--erp-color-bg-hover);
+}
+
+.erp-quick-filter__chip:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-quick-filter__chip[aria-pressed='true'] {
+  color: var(--erp-color-primary);
+  background: var(--erp-color-primary-subtle);
+  border-color: var(--erp-color-primary);
+}
+
+.erp-quick-filter__count {
+  min-width: 1.25rem;
+  padding: 0 0.375rem;
+  font-size: var(--erp-font-size-xs);
+  text-align: center;
+  background: var(--erp-color-bg-muted);
+  border-radius: var(--erp-radius-pill);
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-quick-filter__chip[aria-pressed='true'] .erp-quick-filter__count {
+  background: var(--erp-color-bg);
+}

@@ -1,0 +1,117 @@
+@import '../../styles/base.css';
+
+.erp-workflow-stages {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+}
+
+.erp-workflow-stages[data-orientation='vertical'] {
+  flex-direction: column;
+}
+
+.erp-workflow-stages__step {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--erp-space-2);
+  min-width: 0;
+  padding-right: var(--erp-space-3);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-workflow-stages[data-orientation='horizontal'] .erp-workflow-stages__step:not(:last-child)::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  min-width: 1rem;
+  background: var(--erp-color-border);
+}
+
+.erp-workflow-stages[data-orientation='horizontal'] .erp-workflow-stages__step[data-state='complete']:not(:last-child)::after {
+  background: var(--erp-color-success);
+}
+
+.erp-workflow-stages[data-orientation='vertical'] .erp-workflow-stages__step {
+  padding: 0 0 var(--erp-space-4);
+}
+
+.erp-workflow-stages[data-orientation='vertical'] .erp-workflow-stages__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1.75rem;
+  bottom: 0.25rem;
+  left: 0.75rem;
+  width: 2px;
+  background: var(--erp-color-border);
+}
+
+.erp-workflow-stages__marker {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--erp-font-size-xs);
+  font-weight: var(--erp-font-weight-bold);
+  background: var(--erp-color-bg);
+  border: 2px solid var(--erp-color-border);
+  border-radius: 50%;
+}
+
+.erp-workflow-stages[data-size='sm'] .erp-workflow-stages__marker {
+  width: 1.125rem;
+  height: 1.125rem;
+  font-size: 0.625rem;
+}
+
+.erp-workflow-stages__step[data-state='complete'] {
+  color: var(--erp-color-text);
+}
+
+.erp-workflow-stages__step[data-state='complete'] .erp-workflow-stages__marker {
+  color: var(--erp-color-text-inverse);
+  background: var(--erp-color-success);
+  border-color: var(--erp-color-success);
+}
+
+.erp-workflow-stages__step[data-state='current'] {
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-primary);
+}
+
+.erp-workflow-stages__step[data-state='current'] .erp-workflow-stages__marker {
+  color: var(--erp-color-primary);
+  border-color: var(--erp-color-primary);
+}
+
+.erp-workflow-stages__step[data-state='rejected'] {
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-danger);
+}
+
+.erp-workflow-stages__step[data-state='rejected'] .erp-workflow-stages__marker {
+  color: var(--erp-color-text-inverse);
+  background: var(--erp-color-danger);
+  border-color: var(--erp-color-danger);
+}
+
+.erp-workflow-stages__text {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+.erp-workflow-stages__description {
+  font-size: var(--erp-font-size-xs);
+  font-weight: normal;
+  color: var(--erp-color-text-muted);
+}

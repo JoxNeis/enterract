@@ -1,0 +1,37 @@
+@import '../../styles/base.css';
+
+.erp-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-family: inherit;
+  color: var(--erp-color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.erp-link:hover {
+  color: var(--erp-color-primary-hover);
+}
+
+.erp-link:focus-visible {
+  outline: 2px solid var(--erp-color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.erp-link[data-variant='subtle'] {
+  color: inherit;
+  text-decoration-color: var(--erp-color-border-strong);
+}
+
+.erp-link[aria-disabled='true'] {
+  color: var(--erp-color-text-muted);
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+.erp-link__icon {
+  font-size: 0.85em;
+}

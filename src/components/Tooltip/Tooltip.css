@@ -1,0 +1,17 @@
+@import '../../styles/base.css';
+
+.erp-tooltip.erp-popover {
+  max-width: 18rem;
+  padding: 0.25rem 0.5rem;
+  overflow: visible;
+  font-size: var(--erp-font-size-xs);
+  line-height: var(--erp-line-height);
+  color: var(--erp-color-text-inverse);
+  background: #1f2933;
+  border-color: transparent;
+  pointer-events: none;
+}
+
+.erp-tooltip-trigger {
+  display: inline-flex;
+}

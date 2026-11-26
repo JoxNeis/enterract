@@ -1,0 +1,50 @@
+@import '../../styles/base.css';
+
+.erp-select {
+  min-width: 8rem;
+}
+
+.erp-select__trigger {
+  cursor: pointer;
+  user-select: none;
+}
+
+.erp-select__trigger:focus-visible,
+.erp-select__trigger:focus {
+  outline: 0;
+  border-color: var(--erp-color-focus);
+  box-shadow: 0 0 0 1px var(--erp-color-focus);
+}
+
+.erp-select__trigger[data-disabled] {
+  cursor: not-allowed;
+}
+
+.erp-select__trigger[data-readonly] {
+  cursor: default;
+}
+
+.erp-select__trigger[data-readonly] .erp-select__chevron {
+  visibility: hidden;
+}
+
+.erp-select__value {
+  flex: 1;
+  min-width: 0;
+  padding-block: 0.375rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.erp-input-shell[data-size='sm'] .erp-select__value {
+  padding-block: 0.125rem;
+}
+
+.erp-select__value[data-placeholder] {
+  color: var(--erp-color-text-muted);
+}
+
+.erp-select__trigger[aria-expanded='true'] .erp-select__chevron {
+  transform: rotate(180deg);
+}

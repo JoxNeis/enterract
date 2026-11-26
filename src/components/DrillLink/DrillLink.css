@@ -1,0 +1,48 @@
+@import '../../styles/base.css';
+
+.erp-drill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.erp-drill-link__value {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.erp-drill-link__icon {
+  font-size: 0.8em;
+  color: var(--erp-color-primary);
+  opacity: 0;
+  transition: opacity var(--erp-transition);
+}
+
+.erp-drill-link:hover .erp-drill-link__icon,
+.erp-drill-link:focus-visible .erp-drill-link__icon {
+  opacity: 1;
+}
+
+.erp-drill-link:hover .erp-drill-link__value {
+  color: var(--erp-color-primary);
+}
+
+.erp-drill-link:focus-visible {
+  outline: 2px solid var(--erp-color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.erp-drill-link:disabled {
+  cursor: default;
+}
+
+.erp-drill-link:disabled .erp-drill-link__value {
+  text-decoration: none;
+}

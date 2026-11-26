@@ -1,0 +1,101 @@
+@import '../../styles/base.css';
+
+.erp-filter-builder {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+}
+
+.erp-filter-builder__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  min-width: 0;
+  margin: 0;
+  padding: var(--erp-space-3);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius);
+}
+
+.erp-filter-builder__group[data-depth='1'] {
+  background: var(--erp-color-bg-subtle);
+  border-left: 3px solid var(--erp-color-primary);
+}
+
+.erp-filter-builder__combinator {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.erp-filter-builder__combinator button[role='radio'] {
+  padding: 0.125rem 0.625rem;
+  font: inherit;
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border);
+  cursor: pointer;
+}
+
+.erp-filter-builder__combinator button[role='radio']:first-child {
+  border-radius: var(--erp-radius) 0 0 var(--erp-radius);
+}
+
+.erp-filter-builder__combinator button[role='radio']:nth-child(2) {
+  border-radius: 0 var(--erp-radius) var(--erp-radius) 0;
+}
+
+.erp-filter-builder__combinator button[aria-checked='true'] {
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-on-primary);
+  background: var(--erp-color-primary);
+  border-color: var(--erp-color-primary);
+}
+
+.erp-filter-builder__combinator button:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-filter-builder__remove-group {
+  margin-left: auto;
+}
+
+.erp-filter-builder__rules {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.erp-filter-builder__condition {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(7rem, 0.8fr) minmax(10rem, 1.6fr) auto;
+  align-items: start;
+  gap: var(--erp-space-2);
+}
+
+.erp-filter-builder__between {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-1);
+}
+
+.erp-filter-builder__add {
+  display: flex;
+  gap: var(--erp-space-2);
+}
+
+.erp-filter-builder__summary {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+  margin: 0;
+  color: var(--erp-color-text-muted);
+}

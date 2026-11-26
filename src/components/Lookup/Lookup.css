@@ -1,0 +1,67 @@
+@import '../../styles/base.css';
+
+.erp-lookup {
+  min-width: 10rem;
+}
+
+.erp-lookup__popover {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.erp-lookup__popover .erp-listbox {
+  flex: 1;
+  max-height: 18rem;
+  overflow: auto;
+}
+
+.erp-lookup__header,
+.erp-lookup__row {
+  display: grid;
+  gap: var(--erp-space-3);
+  width: 100%;
+}
+
+.erp-lookup__header {
+  box-sizing: border-box;
+  padding: var(--erp-space-2) var(--erp-space-3);
+  font-size: var(--erp-font-size-xs);
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-text-muted);
+  background: var(--erp-color-bg-subtle);
+  border-bottom: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-lookup__row span,
+.erp-lookup__header span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.erp-lookup__row [data-align='end'],
+.erp-lookup__header [data-align='end'] {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-lookup__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--erp-space-1) var(--erp-space-3);
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+  border-top: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-lookup__footer button {
+  padding: 0;
+  font: inherit;
+  color: var(--erp-color-primary);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}

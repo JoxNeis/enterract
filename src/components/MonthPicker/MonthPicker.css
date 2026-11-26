@@ -1,0 +1,14 @@
+@import '../../styles/base.css';
+
+.erp-month-picker {
+  min-width: 10rem;
+}
+
+.erp-month-picker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--erp-space-2);
+  padding: var(--erp-space-2) var(--erp-space-2) 0;
+  font-weight: var(--erp-font-weight-bold);
+}

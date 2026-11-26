@@ -1,0 +1,32 @@
+@import '../../styles/base.css';
+
+.erp-bom-editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-3);
+  font-family: var(--erp-font-family);
+}
+
+.erp-bom-editor__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--erp-space-3);
+}
+
+.erp-bom-editor__product {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+  margin-right: auto;
+  font-size: var(--erp-font-size-lg);
+}
+
+.erp-bom-editor__build {
+  width: 9rem;
+}
+
+.erp-bom-editor__actions {
+  display: inline-flex;
+  gap: 2px;
+}

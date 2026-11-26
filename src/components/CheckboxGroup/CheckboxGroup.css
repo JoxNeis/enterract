@@ -1,0 +1,18 @@
+@import '../../styles/base.css';
+
+.erp-checkbox-group__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+}
+
+.erp-checkbox-group__options[data-orientation='horizontal'] {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--erp-space-4);
+}
+
+.erp-checkbox-group__all {
+  padding-bottom: var(--erp-space-1);
+  border-bottom: 1px solid var(--erp-color-border-subtle);
+}

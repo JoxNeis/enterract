@@ -1,0 +1,50 @@
+@import '../../styles/base.css';
+
+.erp-summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-3);
+  padding: var(--erp-space-4);
+  font-family: var(--erp-font-family);
+  color: var(--erp-color-text);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius-lg);
+}
+
+.erp-summary-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--erp-space-2);
+}
+
+.erp-summary-card__title {
+  margin: 0;
+  font-size: var(--erp-font-size);
+  font-weight: var(--erp-font-weight-bold);
+}
+
+.erp-summary-card__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+}
+
+.erp-summary-card__items .erp-value-display {
+  grid-template-columns: 1fr auto;
+}
+
+.erp-summary-card__items .erp-value-display__value {
+  text-align: end;
+}
+
+.erp-summary-card__items [data-emphasis] {
+  padding-top: var(--erp-space-2);
+  font-weight: var(--erp-font-weight-bold);
+  border-top: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-summary-card__footer {
+  font-size: var(--erp-font-size-sm);
+}

@@ -1,0 +1,141 @@
+/*
+ * Excel-style range selection shared by the grids. Cells carry:
+ *   data-range-edge="t r b l"  outer edges of the selection  → solid border
+ *   data-dash-edge="t r b l"   outer edges of the copied range or fill preview → dashed border
+ *   data-active                 focused cell → ring
+ * Borders are inset box-shadows and background layers, so they need no extra elements and
+ * scroll, stick and page with the cells.
+ */
+
+[data-cell] {
+  --erp-cell-edge-t: 0 0 #0000;
+  --erp-cell-edge-r: 0 0 #0000;
+  --erp-cell-edge-b: 0 0 #0000;
+  --erp-cell-edge-l: 0 0 #0000;
+  --erp-cell-ring: 0 0 #0000;
+  --erp-cell-dash-color: var(--erp-color-primary);
+  --erp-cell-dash-t: none;
+  --erp-cell-dash-r: none;
+  --erp-cell-dash-b: none;
+  --erp-cell-dash-l: none;
+
+  position: relative;
+  box-shadow: var(--erp-cell-edge-t), var(--erp-cell-edge-r), var(--erp-cell-edge-b), var(--erp-cell-edge-l), var(--erp-cell-ring);
+}
+
+[data-cell][data-active] {
+  --erp-cell-ring: inset 0 0 0 2px var(--erp-color-focus);
+}
+
+[data-range-edge~='t'] {
+  --erp-cell-edge-t: inset 0 2px 0 0 var(--erp-color-primary);
+}
+
+[data-range-edge~='r'] {
+  --erp-cell-edge-r: inset -2px 0 0 0 var(--erp-color-primary);
+}
+
+[data-range-edge~='b'] {
+  --erp-cell-edge-b: inset 0 -2px 0 0 var(--erp-color-primary);
+}
+
+[data-range-edge~='l'] {
+  --erp-cell-edge-l: inset 2px 0 0 0 var(--erp-color-primary);
+}
+
+/* Inside a multi-cell selection the focused cell keeps a thin ring so the range border reads. */
+[data-cell][data-in-range][data-active] {
+  --erp-cell-ring: inset 0 0 0 1px var(--erp-color-focus);
+}
+
+/* Copied range (marching ants) and fill preview: dashed edges as background layers. They replace
+   the solid selection edge on the same side, like Excel. */
+[data-dash-edge] {
+  background-image: var(--erp-cell-dash-t), var(--erp-cell-dash-r), var(--erp-cell-dash-b), var(--erp-cell-dash-l);
+  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+  background-size: 8px 2px, 2px 8px, 8px 2px, 2px 8px;
+  background-position: 0 0, 100% 0, 0 100%, 0 0;
+  animation: erp-marching-ants 0.6s linear infinite;
+}
+
+[data-dash='fill'] {
+  --erp-cell-dash-color: var(--erp-color-text-muted);
+
+  animation: none;
+}
+
+[data-dash-edge~='t'] {
+  --erp-cell-edge-t: 0 0 #0000;
+  --erp-cell-dash-t: linear-gradient(90deg, var(--erp-cell-dash-color) 50%, transparent 50%);
+}
+
+[data-dash-edge~='r'] {
+  --erp-cell-edge-r: 0 0 #0000;
+  --erp-cell-dash-r: linear-gradient(0deg, var(--erp-cell-dash-color) 50%, transparent 50%);
+}
+
+[data-dash-edge~='b'] {
+  --erp-cell-edge-b: 0 0 #0000;
+  --erp-cell-dash-b: linear-gradient(90deg, var(--erp-cell-dash-color) 50%, transparent 50%);
+}
+
+[data-dash-edge~='l'] {
+  --erp-cell-edge-l: 0 0 #0000;
+  --erp-cell-dash-l: linear-gradient(0deg, var(--erp-cell-dash-color) 50%, transparent 50%);
+}
+
+@keyframes erp-marching-ants {
+  to {
+    background-position: 8px 0, 100% 8px, -8px 100%, 0 -8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-dash-edge] {
+    animation: none;
+  }
+}
+
+.erp-fill-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 7px;
+  height: 7px;
+  background: var(--erp-color-primary);
+  border: 1px solid var(--erp-color-bg);
+  cursor: crosshair;
+}
+
+.erp-range-summary {
+  display: inline-flex;
+  gap: var(--erp-space-3);
+  margin-inline-start: auto;
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-range-status {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-3);
+  min-height: 1.5rem;
+  padding: var(--erp-space-1) var(--erp-space-2);
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-range-status__message[data-tone='error'] {
+  color: var(--erp-color-danger);
+}
+
+@media (forced-colors: active) {
+  [data-cell][data-in-range] {
+    outline: 1px solid Highlight;
+    outline-offset: -2px;
+  }
+}

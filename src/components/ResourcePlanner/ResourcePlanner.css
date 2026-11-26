@@ -1,0 +1,128 @@
+@import '../../styles/base.css';
+
+/* Load levels use one sequential hue (light → dark blue): magnitude, not identity. */
+.erp-resource-planner {
+  overflow-x: auto;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius);
+}
+
+.erp-resource-planner table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.erp-resource-planner th,
+.erp-resource-planner td {
+  border: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-resource-planner thead th {
+  width: 3.25rem;
+  height: 2.5rem;
+  font-weight: var(--erp-font-weight-medium);
+  background: var(--erp-color-bg-subtle);
+}
+
+.erp-resource-planner thead th:first-child {
+  width: 12rem;
+  padding: 0 var(--erp-space-2);
+  text-align: start;
+}
+
+.erp-resource-planner thead th[data-today] {
+  color: var(--erp-color-primary);
+  box-shadow: inset 0 -3px 0 var(--erp-color-primary);
+}
+
+.erp-resource-planner__dow {
+  display: block;
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-resource-planner th[scope='row'] {
+  padding: var(--erp-space-1) var(--erp-space-2);
+  font-weight: normal;
+  text-align: start;
+  vertical-align: top;
+}
+
+.erp-resource-planner__name {
+  display: block;
+  font-weight: var(--erp-font-weight-medium);
+}
+
+.erp-resource-planner__role,
+.erp-resource-planner__util {
+  display: block;
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-resource-planner__cell {
+  position: relative;
+  height: 4.5rem;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+.erp-resource-planner__cell[data-weekend] {
+  background: var(--erp-color-bg-muted);
+  cursor: default;
+}
+
+.erp-resource-planner__cell[data-load='1'] {
+  background: #cce3fd;
+}
+
+.erp-resource-planner__cell[data-load='2'] {
+  background: #b6d5f8;
+}
+
+.erp-resource-planner__cell[data-load='3'] {
+  background: #9dc8f7;
+}
+
+.erp-resource-planner__cell[data-load='4'] {
+  background: #84b9f3;
+}
+
+.erp-resource-planner__cell[data-over] {
+  box-shadow: inset 0 0 0 2px var(--erp-color-danger);
+}
+
+.erp-resource-planner__over {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  color: var(--erp-color-danger);
+}
+
+.erp-resource-planner__bar {
+  position: absolute;
+  left: 2px;
+  z-index: 1;
+  height: 20px;
+  padding: 0 6px;
+  overflow: hidden;
+  font: inherit;
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text);
+  text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border);
+  border-left: 4px solid var(--erp-chart-1);
+  border-radius: var(--erp-radius-sm);
+  cursor: pointer;
+}
+
+.erp-resource-planner__bar:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}

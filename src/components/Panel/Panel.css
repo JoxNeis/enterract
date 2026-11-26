@@ -1,0 +1,70 @@
+@import '../../styles/base.css';
+
+.erp-panel {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size);
+  color: var(--erp-color-text);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius-lg);
+}
+
+.erp-panel[data-variant='filled'] {
+  background: var(--erp-color-bg-subtle);
+}
+
+.erp-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--erp-space-3);
+  padding: var(--erp-space-3) var(--erp-space-4);
+  border-bottom: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-panel__title {
+  margin: 0;
+  font-size: var(--erp-font-size);
+  font-weight: var(--erp-font-weight-bold);
+}
+
+.erp-panel__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.erp-panel__toggle:focus-visible {
+  outline: 2px solid var(--erp-color-focus);
+  outline-offset: 2px;
+}
+
+.erp-panel__actions {
+  display: flex;
+  gap: var(--erp-space-2);
+}
+
+.erp-panel__body {
+  padding: var(--erp-space-4);
+}
+
+.erp-panel[data-flush] .erp-panel__body {
+  padding: 0;
+}
+
+.erp-panel__body[hidden] {
+  display: none;
+}
+
+.erp-panel__footer {
+  padding: var(--erp-space-3) var(--erp-space-4);
+  border-top: 1px solid var(--erp-color-border-subtle);
+}

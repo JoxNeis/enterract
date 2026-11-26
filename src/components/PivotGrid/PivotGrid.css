@@ -1,0 +1,95 @@
+@import '../../styles/base.css';
+
+.erp-pivot-grid {
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+}
+
+.erp-pivot-grid__scroller {
+  overflow: auto;
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius);
+}
+
+.erp-pivot-grid table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.erp-pivot-grid th,
+.erp-pivot-grid td {
+  height: 2rem;
+  padding: 0 var(--erp-space-2);
+  white-space: nowrap;
+  border-bottom: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-pivot-grid thead th {
+  position: sticky;
+  top: 0;
+  font-weight: var(--erp-font-weight-bold);
+  text-align: end;
+  background-color: var(--erp-color-bg-subtle);
+}
+
+.erp-pivot-grid thead th:first-child,
+.erp-pivot-grid th[scope='row'] {
+  text-align: start;
+}
+
+.erp-pivot-grid th[scope='row'] {
+  font-weight: normal;
+}
+
+.erp-pivot-grid td {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+  outline: 0;
+  cursor: cell;
+}
+
+.erp-pivot-grid td[data-in-range],
+.erp-pivot-grid tr[data-subtotal] td[data-in-range],
+.erp-pivot-grid .erp-pivot-grid__total[data-in-range] {
+  background-color: var(--erp-color-selected);
+}
+
+.erp-pivot-grid th[data-range-col] {
+  color: var(--erp-color-primary);
+}
+
+.erp-pivot-grid tr[data-subtotal] th,
+.erp-pivot-grid tr[data-subtotal] td {
+  font-weight: var(--erp-font-weight-bold);
+  background-color: var(--erp-color-bg-subtle);
+}
+
+.erp-pivot-grid .erp-pivot-grid__total {
+  font-weight: var(--erp-font-weight-bold);
+  background-color: var(--erp-color-bg-muted);
+}
+
+.erp-pivot-grid tfoot th,
+.erp-pivot-grid tfoot td {
+  font-weight: var(--erp-font-weight-bold);
+  background-color: var(--erp-color-bg-muted);
+  border-top: 2px solid var(--erp-color-border);
+}
+
+.erp-pivot-grid__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--erp-space-1);
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.erp-pivot-grid__toggle:focus-visible {
+  outline: 2px solid var(--erp-color-focus);
+  outline-offset: 2px;
+}

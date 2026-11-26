@@ -1,0 +1,20 @@
+@import '../../styles/base.css';
+
+.erp-range-filter__inputs {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+}
+
+.erp-range-filter__inputs > .erp-form-field {
+  flex: 1;
+  min-width: 6rem;
+}
+
+.erp-range-filter__inputs .erp-form-field__messages {
+  display: none;
+}
+
+.erp-range-filter__dash {
+  color: var(--erp-color-text-muted);
+}

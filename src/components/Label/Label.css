@@ -1,0 +1,24 @@
+@import '../../styles/tokens.css';
+
+.erp-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.125rem;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  font-weight: var(--erp-font-weight-medium);
+  line-height: var(--erp-line-height);
+  color: var(--erp-color-text);
+}
+
+.erp-label[data-size='sm'] {
+  font-size: var(--erp-font-size-xs);
+}
+
+.erp-label[data-disabled] {
+  color: var(--erp-color-text-muted);
+}
+
+.erp-label__required {
+  color: var(--erp-color-danger);
+}

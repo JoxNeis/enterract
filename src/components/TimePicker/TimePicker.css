@@ -1,0 +1,9 @@
+@import '../../styles/base.css';
+
+.erp-time-picker {
+  min-width: 7rem;
+}
+
+.erp-time-picker__popover {
+  max-height: 14rem;
+}

@@ -1,0 +1,56 @@
+@import '../../styles/base.css';
+
+.erp-pivot-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-3);
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+}
+
+.erp-pivot-fields__zone {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-1);
+  padding: var(--erp-space-2);
+  background: var(--erp-color-bg-subtle);
+  border: 1px dashed var(--erp-color-border);
+  border-radius: var(--erp-radius);
+}
+
+.erp-pivot-fields__title {
+  margin: 0;
+  font-size: var(--erp-font-size-xs);
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.erp-pivot-fields__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.erp-pivot-fields__list li {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 2px 2px var(--erp-space-2);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius-sm);
+}
+
+.erp-pivot-fields__list .erp-select {
+  min-width: 6rem;
+}
+
+.erp-pivot-fields__name {
+  flex: 1;
+}

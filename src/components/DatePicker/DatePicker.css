@@ -1,0 +1,5 @@
+@import '../../styles/base.css';
+
+.erp-date-picker {
+  min-width: 9rem;
+}

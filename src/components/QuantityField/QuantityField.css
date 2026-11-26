@@ -1,0 +1,17 @@
+@import '../CurrencyField/CurrencyField.css';
+
+.erp-quantity-field__unit {
+  padding: 0 0.125rem;
+  font: inherit;
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+  background: transparent;
+  border: 0;
+  border-left: 1px solid var(--erp-color-border-subtle);
+  cursor: pointer;
+}
+
+.erp-quantity-field__unit:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}

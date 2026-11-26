@@ -1,0 +1,107 @@
+@import '../../styles/base.css';
+
+.erp-calendar {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  padding: var(--erp-space-2);
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+}
+
+.erp-calendar__header {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.erp-calendar__title {
+  flex: 1;
+  font-weight: var(--erp-font-weight-bold);
+  text-align: center;
+}
+
+.erp-calendar__months {
+  display: flex;
+  gap: var(--erp-space-4);
+}
+
+.erp-calendar__grid {
+  border-collapse: collapse;
+}
+
+.erp-calendar__caption {
+  padding-bottom: var(--erp-space-1);
+  font-weight: var(--erp-font-weight-medium);
+}
+
+.erp-calendar__grid th {
+  width: 2rem;
+  padding-bottom: var(--erp-space-1);
+  font-size: var(--erp-font-size-xs);
+  font-weight: var(--erp-font-weight-medium);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-calendar__grid td {
+  padding: 1px 0;
+  text-align: center;
+}
+
+.erp-calendar__day {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--erp-radius);
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-calendar__day:hover {
+  background: var(--erp-color-bg-hover);
+}
+
+.erp-calendar__day:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-calendar__day[data-outside] {
+  color: var(--erp-color-text-muted);
+  opacity: 0.6;
+}
+
+.erp-calendar__day[data-today] {
+  font-weight: var(--erp-font-weight-bold);
+  border-color: var(--erp-color-border-strong);
+}
+
+.erp-calendar__day[data-in-range] {
+  background: var(--erp-color-primary-subtle);
+  border-radius: 0;
+}
+
+.erp-calendar__day[data-selected] {
+  color: var(--erp-color-on-primary);
+  background: var(--erp-color-primary);
+}
+
+.erp-calendar__day[aria-disabled='true'] {
+  color: var(--erp-color-text-muted);
+  text-decoration: line-through;
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.erp-calendar__day[aria-disabled='true']:hover {
+  background: transparent;
+}
+
+.erp-calendar[data-disabled] {
+  opacity: 0.6;
+}

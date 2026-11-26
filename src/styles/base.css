@@ -1,0 +1,149 @@
+@import './tokens.css';
+
+/* Shared building blocks used by many components. */
+
+.erp-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Input box with optional prefix/suffix adornments */
+.erp-input-shell {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-1);
+  box-sizing: border-box;
+  min-height: var(--erp-control-height);
+  padding-inline: var(--erp-control-padding-x);
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size);
+  color: var(--erp-color-text);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border);
+  border-radius: var(--erp-radius);
+  transition: border-color var(--erp-transition), box-shadow var(--erp-transition);
+}
+
+.erp-input-shell:hover {
+  border-color: var(--erp-color-border-strong);
+}
+
+.erp-input-shell:focus-within {
+  border-color: var(--erp-color-focus);
+  box-shadow: 0 0 0 1px var(--erp-color-focus);
+}
+
+.erp-input-shell[data-size='sm'] {
+  min-height: var(--erp-control-height-sm);
+  padding-inline: var(--erp-control-padding-x-sm);
+  font-size: var(--erp-font-size-sm);
+}
+
+.erp-input-shell[data-invalid] {
+  border-color: var(--erp-color-danger);
+}
+
+.erp-input-shell[data-invalid]:focus-within {
+  box-shadow: 0 0 0 1px var(--erp-color-danger);
+}
+
+.erp-input-shell[data-readonly] {
+  background: var(--erp-color-bg-readonly);
+  border-style: dashed;
+}
+
+.erp-input-shell[data-disabled] {
+  background: var(--erp-color-bg-muted);
+  color: var(--erp-color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.erp-input-shell__input {
+  flex: 1;
+  min-width: 0;
+  padding-block: 0.375rem;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.erp-input-shell[data-size='sm'] .erp-input-shell__input {
+  padding-block: 0.125rem;
+}
+
+.erp-input-shell__input:disabled {
+  cursor: not-allowed;
+}
+
+.erp-input-shell__input[data-align='end'] {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-input-shell__adornment {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--erp-space-1);
+  color: var(--erp-color-text-muted);
+  white-space: nowrap;
+}
+
+/* Small borderless button used inside inputs (clear, toggle, open) */
+.erp-input-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  color: var(--erp-color-text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: var(--erp-radius-sm);
+  cursor: pointer;
+}
+
+.erp-input-action:hover {
+  color: var(--erp-color-text);
+  background: var(--erp-color-bg-hover);
+}
+
+.erp-input-action:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-input-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Surface used by popovers, menus and panels */
+.erp-surface {
+  box-sizing: border-box;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size);
+  color: var(--erp-color-text);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius);
+  box-shadow: var(--erp-shadow-popover);
+}
+
+.erp-empty {
+  padding: var(--erp-space-3);
+  color: var(--erp-color-text-muted);
+  font-size: var(--erp-font-size-sm);
+  text-align: center;
+}

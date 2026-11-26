@@ -1,0 +1,13 @@
+@import '../Button/Button.css';
+
+.erp-action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--erp-space-2);
+  font-family: var(--erp-font-family);
+}
+
+.erp-action-bar[data-size='sm'] {
+  gap: var(--erp-space-1);
+}

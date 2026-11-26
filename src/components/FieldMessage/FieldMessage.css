@@ -1,0 +1,27 @@
+@import '../../styles/tokens.css';
+
+.erp-field-message {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--erp-space-1);
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-xs);
+  line-height: var(--erp-line-height);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-field-message .erp-icon {
+  margin-top: 0.15em;
+}
+
+.erp-field-message[data-tone='error'] {
+  color: var(--erp-color-danger);
+}
+
+.erp-field-message[data-tone='warning'] {
+  color: var(--erp-color-warning);
+}
+
+.erp-field-message[data-tone='success'] {
+  color: var(--erp-color-success);
+}

@@ -2,6 +2,7 @@ import { createRef, type SubmitEvent } from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
+import { Icon } from '../Icon'
 import { Button } from './Button'
 
 describe('Button', () => {
@@ -75,5 +76,54 @@ describe('Button', () => {
     render(<Button ref={ref}>Click</Button>)
 
     expect(ref.current).toBeInstanceOf(HTMLButtonElement)
+  })
+
+  it('exposes variant and size as data attributes', () => {
+    render(
+      <Button
+        variant='danger'
+        size='sm'
+      >
+        Delete
+      </Button>
+    )
+
+    const button = screen.getByRole('button')
+    expect(button).toHaveAttribute('data-variant', 'danger')
+    expect(button).toHaveAttribute('data-size', 'sm')
+  })
+
+  it('blocks repeat clicks while loading and sets aria-busy', async () => {
+    const onClick = vi.fn()
+    render(
+      <Button
+        loading
+        onClick={onClick}
+      >
+        Save
+      </Button>
+    )
+
+    const button = screen.getByRole('button', { name: 'Save' })
+    expect(button).toHaveAttribute('aria-busy', 'true')
+    expect(button).toHaveAttribute('aria-disabled', 'true')
+    await userEvent.click(button)
+    expect(onClick).not.toHaveBeenCalled()
+  })
+
+  it('renders a leading icon', () => {
+    render(<Button icon={<Icon name='save' />}>Save</Button>)
+
+    expect(screen.getByRole('button').querySelector('[data-icon="save"]')).not.toBeNull()
+  })
+
+  it('activates with Enter and Space', async () => {
+    const onClick = vi.fn()
+    render(<Button onClick={onClick}>Go</Button>)
+
+    screen.getByRole('button').focus()
+    await userEvent.keyboard('{Enter}')
+    await userEvent.keyboard(' ')
+    expect(onClick).toHaveBeenCalledTimes(2)
   })
 })

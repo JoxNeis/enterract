@@ -1,0 +1,64 @@
+@import '../../styles/base.css';
+
+.erp-checkbox__box {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  width: 1rem;
+  height: 1rem;
+}
+
+.erp-checkbox__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.erp-checkbox__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 0.75rem;
+  color: var(--erp-color-on-primary);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border-strong);
+  border-radius: var(--erp-radius-sm);
+  pointer-events: none;
+  transition: background var(--erp-transition), border-color var(--erp-transition);
+}
+
+.erp-checkbox__box[data-checked] .erp-checkbox__mark,
+.erp-checkbox__box[data-indeterminate] .erp-checkbox__mark {
+  background: var(--erp-color-primary);
+  border-color: var(--erp-color-primary);
+}
+
+.erp-checkbox__box[data-invalid] .erp-checkbox__mark {
+  border-color: var(--erp-color-danger);
+}
+
+.erp-checkbox__input:focus-visible + .erp-checkbox__mark {
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-checkbox[data-disabled] .erp-checkbox__mark {
+  opacity: 0.5;
+}
+
+.erp-checkbox[data-readonly] .erp-checkbox__mark {
+  background: var(--erp-color-bg-readonly);
+  border-style: dashed;
+  color: var(--erp-color-text-muted);
+}
+
+.erp-checkbox[data-readonly] .erp-checkbox__box[data-checked] .erp-checkbox__mark {
+  background: var(--erp-color-bg-muted);
+  border-color: var(--erp-color-border-strong);
+}

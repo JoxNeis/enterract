@@ -1,0 +1,74 @@
+@import '../../styles/tokens.css';
+
+.erp-progress {
+  --erp-progress-color: var(--erp-color-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-1);
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+}
+
+.erp-progress[data-tone='success'] {
+  --erp-progress-color: var(--erp-color-success);
+}
+
+.erp-progress[data-tone='warning'] {
+  --erp-progress-color: var(--erp-color-warning);
+}
+
+.erp-progress[data-tone='danger'] {
+  --erp-progress-color: var(--erp-color-danger);
+}
+
+.erp-progress__header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--erp-space-2);
+}
+
+.erp-progress__value {
+  color: var(--erp-color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-progress__track {
+  position: relative;
+  height: 0.5rem;
+  overflow: hidden;
+  background: var(--erp-color-bg-muted);
+  border-radius: var(--erp-radius-pill);
+}
+
+.erp-progress[data-size='sm'] .erp-progress__track {
+  height: 0.25rem;
+}
+
+.erp-progress__bar {
+  height: 100%;
+  background: var(--erp-progress-color);
+  border-radius: inherit;
+  transition: width 200ms ease;
+}
+
+.erp-progress[data-indeterminate] .erp-progress__bar {
+  position: absolute;
+  width: 35%;
+  animation: erp-progress-slide 1.2s ease-in-out infinite;
+}
+
+@keyframes erp-progress-slide {
+  from {
+    left: -35%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .erp-progress[data-indeterminate] .erp-progress__bar {
+    animation-duration: 3s;
+  }
+}

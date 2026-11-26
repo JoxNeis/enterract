@@ -1,0 +1,81 @@
+@import '../../styles/base.css';
+
+.erp-image-upload__body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--erp-space-3);
+}
+
+.erp-image-upload__preview {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--erp-color-text-muted);
+  background: var(--erp-color-bg-subtle);
+  border: 1px solid var(--erp-color-border);
+  border-radius: var(--erp-radius-lg);
+}
+
+.erp-image-upload__preview[data-empty] {
+  border-style: dashed;
+}
+
+.erp-image-upload__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.erp-image-upload__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--erp-space-1);
+}
+
+.erp-image-upload__name {
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-image-upload__cropper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--erp-space-3);
+}
+
+.erp-image-upload__frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--erp-color-bg-muted);
+  outline: 2px solid var(--erp-color-primary);
+  cursor: grab;
+  touch-action: none;
+}
+
+.erp-image-upload__frame:focus-visible {
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-image-upload__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  transform-origin: center;
+}
+
+.erp-image-upload__zoom {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+  width: 320px;
+  font-size: var(--erp-font-size-sm);
+}
+
+.erp-image-upload__zoom input {
+  flex: 1;
+}

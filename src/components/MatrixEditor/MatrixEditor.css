@@ -1,0 +1,104 @@
+@import '../../styles/base.css';
+
+.erp-matrix-editor {
+  width: fit-content;
+  max-width: 100%;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+}
+
+.erp-matrix-editor__scroller {
+  overflow: auto;
+}
+
+.erp-matrix-editor table {
+  border-collapse: collapse;
+}
+
+.erp-matrix-editor th,
+.erp-matrix-editor td {
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-matrix-editor th {
+  padding: 0 var(--erp-space-2);
+  font-weight: var(--erp-font-weight-medium);
+  white-space: nowrap;
+  background-color: var(--erp-color-bg-subtle);
+}
+
+.erp-matrix-editor thead th {
+  text-align: end;
+}
+
+.erp-matrix-editor thead th:first-child,
+.erp-matrix-editor th[scope='row'] {
+  text-align: start;
+}
+
+.erp-matrix-editor th[data-range-col],
+.erp-matrix-editor th[data-range-row] {
+  color: var(--erp-color-primary);
+  background-color: var(--erp-color-primary-subtle);
+}
+
+.erp-matrix-editor__cell {
+  box-sizing: border-box;
+  width: 5.5rem;
+  min-width: 5.5rem;
+  padding: 0 var(--erp-space-2) !important;
+  text-align: end;
+  white-space: nowrap;
+  outline: 0;
+  cursor: cell;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-matrix-editor__cell[data-in-range] {
+  background-color: var(--erp-color-selected);
+}
+
+.erp-matrix-editor__cell[data-editing] {
+  --erp-cell-ring: inset 0 0 0 2px var(--erp-color-focus);
+
+  padding: 0 !important;
+}
+
+.erp-matrix-editor__cell[aria-readonly='true']:not(.erp-matrix-editor__total) {
+  color: var(--erp-color-text-muted);
+}
+
+.erp-matrix-editor__input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--erp-space-2);
+  font: inherit;
+  text-align: end;
+  background: var(--erp-color-bg);
+  border: 0;
+  outline: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-matrix-editor__input[aria-invalid='true'] {
+  box-shadow: inset 0 0 0 2px var(--erp-color-danger);
+}
+
+.erp-matrix-editor__total {
+  font-weight: var(--erp-font-weight-bold);
+  text-align: end;
+  background-color: var(--erp-color-bg-subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-matrix-editor__grand {
+  background-color: var(--erp-color-bg-muted);
+}
+
+.erp-matrix-editor__total[data-in-range] {
+  background-color: var(--erp-color-selected);
+}

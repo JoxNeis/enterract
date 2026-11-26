@@ -1,0 +1,11 @@
+@import '../Button/Button.css';
+
+.erp-icon-button.erp-button {
+  width: var(--erp-control-height);
+  padding: 0;
+}
+
+.erp-icon-button.erp-button[data-size='sm'] {
+  width: var(--erp-control-height-sm);
+  padding: 0;
+}

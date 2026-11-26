@@ -1,0 +1,23 @@
+@import '../../styles/base.css';
+
+.erp-tag-input__box {
+  flex-wrap: wrap;
+  padding-block: 0.25rem;
+  cursor: text;
+}
+
+.erp-tag-input__tags {
+  display: contents;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.erp-tag-input__tags li {
+  display: inline-flex;
+}
+
+.erp-tag-input__input {
+  min-width: 6rem;
+  padding-block: 0.125rem;
+}

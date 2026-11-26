@@ -1,0 +1,103 @@
+@import '../../styles/base.css';
+
+.erp-workflow-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size);
+  color: var(--erp-color-text);
+}
+
+.erp-workflow-timeline__event {
+  position: relative;
+  display: flex;
+  gap: var(--erp-space-3);
+  padding-bottom: var(--erp-space-4);
+}
+
+.erp-workflow-timeline__event:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  bottom: 0;
+  left: 0.6875rem;
+  width: 2px;
+  background: var(--erp-color-border);
+}
+
+.erp-workflow-timeline__event[data-state='done']:not(:last-child)::before {
+  background: var(--erp-color-success);
+}
+
+.erp-workflow-timeline__marker {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--erp-color-text-inverse);
+  background: var(--erp-color-bg);
+  border: 2px solid var(--erp-color-border-strong);
+  border-radius: 50%;
+}
+
+.erp-workflow-timeline__event[data-state='done'] .erp-workflow-timeline__marker {
+  background: var(--erp-color-success);
+  border-color: var(--erp-color-success);
+}
+
+.erp-workflow-timeline__event[data-state='current'] .erp-workflow-timeline__marker {
+  border-color: var(--erp-color-primary);
+  box-shadow: inset 0 0 0 3px var(--erp-color-bg), inset 0 0 0 8px var(--erp-color-primary);
+}
+
+.erp-workflow-timeline__event[data-state='rejected'] .erp-workflow-timeline__marker {
+  background: var(--erp-color-danger);
+  border-color: var(--erp-color-danger);
+}
+
+.erp-workflow-timeline__event[data-state='skipped'] .erp-workflow-timeline__marker {
+  color: var(--erp-color-text-muted);
+  border-style: dashed;
+}
+
+.erp-workflow-timeline__event[data-state='pending'],
+.erp-workflow-timeline__event[data-state='skipped'] {
+  color: var(--erp-color-text-muted);
+}
+
+.erp-workflow-timeline__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.erp-workflow-timeline__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--erp-space-2);
+}
+
+.erp-workflow-timeline__state,
+.erp-workflow-timeline__meta {
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-workflow-timeline__event[data-state='rejected'] .erp-workflow-timeline__state {
+  color: var(--erp-color-danger);
+}
+
+.erp-workflow-timeline__comment {
+  margin: var(--erp-space-1) 0 0;
+  padding: var(--erp-space-2);
+  font-size: var(--erp-font-size-sm);
+  background: var(--erp-color-bg-subtle);
+  border-radius: var(--erp-radius);
+}

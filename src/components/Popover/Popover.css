@@ -1,0 +1,11 @@
+@import '../../styles/base.css';
+
+.erp-popover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--erp-z-popover);
+  max-width: min(32rem, calc(100vw - 8px));
+  max-height: min(24rem, calc(100vh - 8px));
+  overflow: auto;
+}

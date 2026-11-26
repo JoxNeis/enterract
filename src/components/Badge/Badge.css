@@ -1,0 +1,43 @@
+@import '../../styles/tokens.css';
+
+.erp-badge {
+  --erp-badge-bg: var(--erp-color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.375rem;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-xs);
+  font-weight: var(--erp-font-weight-bold);
+  line-height: 1;
+  color: var(--erp-color-text-inverse);
+  background: var(--erp-badge-bg);
+  border-radius: var(--erp-radius-pill);
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-badge[data-tone='neutral'] {
+  --erp-badge-bg: var(--erp-color-text-muted);
+}
+
+.erp-badge[data-tone='danger'] {
+  --erp-badge-bg: var(--erp-color-danger);
+}
+
+.erp-badge[data-tone='success'] {
+  --erp-badge-bg: var(--erp-color-success);
+}
+
+.erp-badge[data-tone='warning'] {
+  --erp-badge-bg: var(--erp-color-warning);
+}
+
+.erp-badge[data-dot] {
+  min-width: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+}

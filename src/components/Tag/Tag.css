@@ -1,0 +1,84 @@
+@import '../../styles/tokens.css';
+
+.erp-tag {
+  --erp-tag-bg: var(--erp-color-bg-muted);
+  --erp-tag-color: var(--erp-color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  max-width: 16rem;
+  padding: 0.125rem 0.5rem;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  line-height: 1.4;
+  color: var(--erp-tag-color);
+  background: var(--erp-tag-bg);
+  border-radius: var(--erp-radius-sm);
+}
+
+.erp-tag[data-size='sm'] {
+  padding: 0 0.375rem;
+  font-size: var(--erp-font-size-xs);
+}
+
+.erp-tag[data-tone='info'] {
+  --erp-tag-bg: var(--erp-color-info-subtle);
+  --erp-tag-color: var(--erp-color-info);
+}
+
+.erp-tag[data-tone='success'] {
+  --erp-tag-bg: var(--erp-color-success-subtle);
+  --erp-tag-color: var(--erp-color-success);
+}
+
+.erp-tag[data-tone='warning'] {
+  --erp-tag-bg: var(--erp-color-warning-subtle);
+  --erp-tag-color: var(--erp-color-warning);
+}
+
+.erp-tag[data-tone='danger'] {
+  --erp-tag-bg: var(--erp-color-danger-subtle);
+  --erp-tag-color: var(--erp-color-danger);
+}
+
+.erp-tag[data-tone='primary'] {
+  --erp-tag-bg: var(--erp-color-primary-subtle);
+  --erp-tag-color: var(--erp-color-primary);
+}
+
+.erp-tag[data-disabled] {
+  opacity: 0.6;
+}
+
+.erp-tag__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.erp-tag__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  font-size: 0.7rem;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.erp-tag__remove:hover {
+  background: rgb(0 0 0 / 0.08);
+  opacity: 1;
+}
+
+.erp-tag__remove:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+  opacity: 1;
+}

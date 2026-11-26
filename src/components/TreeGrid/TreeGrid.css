@@ -1,0 +1,95 @@
+@import '../../styles/base.css';
+
+.erp-tree-grid {
+  overflow: auto;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius);
+}
+
+.erp-tree-grid[data-size='md'] {
+  font-size: var(--erp-font-size);
+}
+
+.erp-tree-grid__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.erp-tree-grid__table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 2rem;
+  padding: 0 var(--erp-space-2);
+  font-weight: var(--erp-font-weight-bold);
+  text-align: start;
+  white-space: nowrap;
+  background: var(--erp-color-bg-subtle);
+  border-bottom: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-tree-grid__table th[data-align='end'] {
+  text-align: end;
+}
+
+.erp-tree-grid__cell,
+.erp-tree-grid__actions {
+  height: 2rem;
+  padding: 0 var(--erp-space-2);
+  white-space: nowrap;
+  border-bottom: 1px solid var(--erp-color-border-subtle);
+  outline: 0;
+}
+
+.erp-tree-grid[data-size='md'] .erp-tree-grid__cell {
+  height: 2.5rem;
+}
+
+.erp-tree-grid__cell[data-align='end'] {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-tree-grid__cell,
+.erp-tree-grid__actions {
+  cursor: cell;
+}
+
+.erp-tree-grid__row:hover td:not([data-in-range]) {
+  background-color: var(--erp-color-bg-hover);
+}
+
+.erp-tree-grid__cell[data-in-range],
+.erp-tree-grid__actions[data-in-range] {
+  background-color: var(--erp-color-selected);
+}
+
+.erp-tree-grid__row[data-parent] .erp-tree-grid__cell {
+  font-weight: var(--erp-font-weight-medium);
+}
+
+.erp-tree-grid__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+  color: var(--erp-color-text-muted);
+  cursor: pointer;
+}
+
+.erp-tree-grid__editor {
+  display: inline-block;
+  min-width: 6rem;
+  vertical-align: middle;
+}
+
+.erp-tree-grid__actions {
+  width: 1%;
+  text-align: end;
+}

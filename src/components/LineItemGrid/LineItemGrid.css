@@ -1,0 +1,36 @@
+@import '../DataGrid/DataGrid.css';
+
+.erp-line-item-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-3);
+  font-family: var(--erp-font-family);
+}
+
+.erp-line-item-grid__totals {
+  display: grid;
+  grid-template-columns: auto minmax(8rem, auto);
+  gap: var(--erp-space-1) var(--erp-space-5);
+  align-self: flex-end;
+  margin: 0;
+  font-size: var(--erp-font-size);
+}
+
+.erp-line-item-grid__totals dt {
+  color: var(--erp-color-text-muted);
+  text-align: end;
+}
+
+.erp-line-item-grid__totals dd {
+  margin: 0;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.erp-line-item-grid__totals .erp-line-item-grid__grand {
+  padding-top: var(--erp-space-1);
+  font-size: var(--erp-font-size-lg);
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-text);
+  border-top: 1px solid var(--erp-color-border);
+}

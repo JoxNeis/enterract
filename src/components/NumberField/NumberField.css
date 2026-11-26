@@ -1,0 +1,10 @@
+@import '../../styles/base.css';
+
+.erp-number-field {
+  min-width: 6rem;
+}
+
+.erp-number-field__stepper {
+  display: inline-flex;
+  gap: 2px;
+}

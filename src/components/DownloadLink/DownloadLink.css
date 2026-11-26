@@ -1,0 +1,9 @@
+.erp-download-link {
+  align-items: center;
+}
+
+.erp-download-link__size {
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+  text-decoration: none;
+}

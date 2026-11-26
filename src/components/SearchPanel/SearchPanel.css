@@ -1,0 +1,38 @@
+@import '../../styles/base.css';
+
+.erp-search-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  font-family: var(--erp-font-family);
+}
+
+.erp-search-panel__bar {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--erp-space-2);
+}
+
+.erp-search-panel__scope {
+  flex: 0 0 10rem;
+  min-width: 0;
+}
+
+.erp-search-panel__field {
+  flex: 1;
+}
+
+.erp-search-panel__count {
+  min-width: 1.125rem;
+  padding: 0 0.25rem;
+  font-size: var(--erp-font-size-xs);
+  line-height: 1.125rem;
+  text-align: center;
+  color: var(--erp-color-on-primary);
+  background: var(--erp-color-primary);
+  border-radius: var(--erp-radius-pill);
+}
+
+.erp-search-panel__advanced[hidden] {
+  display: none;
+}

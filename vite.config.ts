@@ -14,7 +14,7 @@ export default defineConfig({
     libInjectCss(),
     dts({
       tsconfigPath: 'tsconfig.app.json',
-      exclude: ['**/*.test.{ts,tsx}', '**/*.stories.{ts,tsx}', 'src/test/**', '.storybook/**'],
+      exclude: ['**/*.test.{ts,tsx}', '**/*.stories.{ts,tsx}', '**/*.fixtures.ts', 'src/test/**', '.storybook/**'],
     }),
   ],
   build: {
@@ -48,7 +48,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       include: ['src/components/**/*.{ts,tsx}'],
-      exclude: ['**/*.stories.{ts,tsx}', '**/*.test.{ts,tsx}', '**/index.ts'],
+      exclude: ['**/*.stories.{ts,tsx}', '**/*.test.{ts,tsx}', '**/*.fixtures.ts', '**/index.ts'],
     },
   },
 })

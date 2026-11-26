@@ -1,0 +1,21 @@
+@import '../../styles/base.css';
+
+.erp-currency-field {
+  min-width: 8rem;
+}
+
+.erp-currency-field__select {
+  padding: 0 0.125rem;
+  font: inherit;
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+  background: transparent;
+  border: 0;
+  border-left: 1px solid var(--erp-color-border-subtle);
+  cursor: pointer;
+}
+
+.erp-currency-field__select:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}

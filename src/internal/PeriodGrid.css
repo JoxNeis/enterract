@@ -1,0 +1,51 @@
+@import '../styles/base.css';
+
+.erp-period-grid {
+  display: grid;
+  gap: 4px;
+  padding: var(--erp-space-2);
+}
+
+.erp-period-grid__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+  min-height: 2.25rem;
+  padding: 0.25rem 0.5rem;
+  font: inherit;
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--erp-radius);
+  cursor: pointer;
+}
+
+.erp-period-grid__cell:hover {
+  background: var(--erp-color-bg-hover);
+}
+
+.erp-period-grid__cell:focus-visible {
+  outline: 0;
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-period-grid__cell[aria-selected='true'] {
+  color: var(--erp-color-on-primary);
+  background: var(--erp-color-primary);
+}
+
+.erp-period-grid__cell[aria-disabled='true'] {
+  color: var(--erp-color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.erp-period-grid__note {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  opacity: 0.8;
+}

@@ -1,0 +1,15 @@
+@import '../../styles/base.css';
+
+.erp-tree-select {
+  min-width: 12rem;
+}
+
+.erp-tree-select__popover {
+  min-width: 16rem;
+  padding: 0;
+}
+
+.erp-tree-select__search {
+  padding: var(--erp-space-2);
+  border-bottom: 1px solid var(--erp-color-border-subtle);
+}

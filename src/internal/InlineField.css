@@ -1,0 +1,47 @@
+@import '../styles/base.css';
+
+.erp-inline-field {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size);
+  color: var(--erp-color-text);
+}
+
+.erp-inline-field[data-size='sm'] {
+  font-size: var(--erp-font-size-sm);
+}
+
+.erp-inline-field__row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+  min-height: 1.5rem;
+  cursor: pointer;
+}
+
+.erp-inline-field[data-label-position='start'] .erp-inline-field__row {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.erp-inline-field[data-disabled] .erp-inline-field__row {
+  color: var(--erp-color-text-muted);
+  cursor: not-allowed;
+}
+
+.erp-inline-field[data-readonly] .erp-inline-field__row {
+  cursor: default;
+}
+
+.erp-inline-field__required {
+  margin-left: 0.125rem;
+  color: var(--erp-color-danger);
+}
+
+.erp-inline-field__messages {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+}

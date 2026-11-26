@@ -1,0 +1,164 @@
+@import '../../styles/base.css';
+
+.erp-kanban {
+  display: grid;
+  grid-auto-columns: minmax(15rem, 1fr);
+  grid-auto-flow: column;
+  gap: var(--erp-space-3);
+  overflow-x: auto;
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text);
+}
+
+.erp-kanban__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  min-height: 12rem;
+  padding: var(--erp-space-2);
+  background: var(--erp-color-bg-subtle);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius-lg);
+}
+
+.erp-kanban__column[data-drop] {
+  border-color: var(--erp-color-primary);
+}
+
+.erp-kanban__column[data-over-limit] {
+  border-color: var(--erp-color-warning);
+}
+
+.erp-kanban__header {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+  padding: 0 var(--erp-space-1);
+}
+
+.erp-kanban__header h3 {
+  margin: 0;
+  font-size: var(--erp-font-size-sm);
+  font-weight: var(--erp-font-weight-bold);
+}
+
+.erp-kanban__count {
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-kanban__warning {
+  color: var(--erp-color-warning);
+}
+
+.erp-kanban__cards {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--erp-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.erp-kanban__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-1);
+  padding: var(--erp-space-2) var(--erp-space-3);
+  background: var(--erp-color-bg);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius);
+  box-shadow: var(--erp-shadow-sm);
+  cursor: grab;
+  outline: 0;
+}
+
+.erp-kanban__card[data-priority='high'] {
+  border-left: 3px solid var(--erp-color-danger);
+}
+
+.erp-kanban__card:focus-visible {
+  box-shadow: var(--erp-focus-ring);
+}
+
+.erp-kanban__card[data-picked] {
+  border-color: var(--erp-color-primary);
+  box-shadow: var(--erp-focus-ring), var(--erp-shadow-popover);
+  transform: rotate(-1deg);
+}
+
+.erp-kanban__card[data-dragging] {
+  opacity: 0.5;
+}
+
+.erp-kanban__card[data-drop-before]::before,
+.erp-kanban__placeholder {
+  content: '';
+  height: 3px;
+  background: var(--erp-color-primary);
+  border-radius: 2px;
+}
+
+.erp-kanban__card[data-drop-before]::before {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  left: 0;
+}
+
+.erp-kanban__title {
+  font-weight: var(--erp-font-weight-medium);
+}
+
+.erp-kanban__description {
+  color: var(--erp-color-text-muted);
+}
+
+.erp-kanban__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--erp-space-1);
+}
+
+.erp-kanban__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--erp-space-2);
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-kanban__priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--erp-color-danger);
+}
+
+.erp-kanban__due {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.erp-kanban__due[data-overdue] {
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-danger);
+}
+
+.erp-kanban__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: auto;
+  font-size: 0.625rem;
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-primary);
+  background: var(--erp-color-primary-subtle);
+  border-radius: 50%;
+}

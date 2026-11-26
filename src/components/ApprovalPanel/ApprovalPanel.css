@@ -1,0 +1,94 @@
+@import '../../styles/base.css';
+
+.erp-approval-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--erp-space-4);
+  padding: var(--erp-space-4);
+  font-family: var(--erp-font-family);
+  font-size: var(--erp-font-size);
+  color: var(--erp-color-text);
+  border: 1px solid var(--erp-color-border-subtle);
+  border-radius: var(--erp-radius-lg);
+}
+
+.erp-approval-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--erp-space-3);
+}
+
+.erp-approval-panel__title {
+  margin: 0;
+  font-size: var(--erp-font-size-lg);
+  font-weight: var(--erp-font-weight-bold);
+}
+
+.erp-approval-panel__steps {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.erp-approval-panel__step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--erp-space-3);
+  padding: var(--erp-space-2) 0;
+}
+
+.erp-approval-panel__step + .erp-approval-panel__step {
+  border-top: 1px solid var(--erp-color-border-subtle);
+}
+
+.erp-approval-panel__avatar {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--erp-font-size-xs);
+  font-weight: var(--erp-font-weight-bold);
+  color: var(--erp-color-text-muted);
+  background: var(--erp-color-bg-muted);
+  border-radius: 50%;
+}
+
+.erp-approval-panel__who {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.erp-approval-panel__role {
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-approval-panel__comment {
+  display: flex;
+  gap: var(--erp-space-1);
+  margin: var(--erp-space-1) 0 0;
+  font-size: var(--erp-font-size-sm);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-approval-panel__decision {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: var(--erp-font-size-xs);
+  color: var(--erp-color-text-muted);
+}
+
+.erp-approval-panel__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--erp-space-2);
+}

@@ -1,0 +1,43 @@
+@import '../../styles/tokens.css';
+
+.erp-spinner {
+  display: inline-flex;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--erp-color-primary);
+  vertical-align: middle;
+}
+
+.erp-spinner[data-size='sm'] {
+  width: 1em;
+  height: 1em;
+  color: currentColor;
+}
+
+.erp-spinner[data-size='lg'] {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.erp-spinner__ring {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: erp-spin 0.7s linear infinite;
+}
+
+@keyframes erp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .erp-spinner__ring {
+    animation-duration: 2s;
+  }
+}
