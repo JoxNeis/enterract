@@ -1,6 +1,6 @@
 {
   "name": "enterract",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React component library for ERP applications: forms, lookups, Excel-style data grids, workflow and approval controls.",
   "license": "Apache-2.0",
   "author": "JoxNeis",
