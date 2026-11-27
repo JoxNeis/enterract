@@ -5,6 +5,7 @@ import { flag } from '../../utils/flag'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { aggregateLabel, pivot, type PivotConfig, type PivotRecord } from './pivot'
+import '../../styles/base.css'
 import './PivotGrid.css'
 
 export interface PivotGridProps extends Omit<ComponentProps<'div'>, 'children'> {

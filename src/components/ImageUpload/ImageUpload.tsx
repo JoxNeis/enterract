@@ -8,6 +8,7 @@ import { Dialog } from '../Dialog'
 import { FormField, useFieldProps } from '../FormField'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './ImageUpload.css'
 
 export interface ImageValue {

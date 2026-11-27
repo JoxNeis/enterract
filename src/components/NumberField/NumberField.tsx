@@ -17,6 +17,7 @@ import { FormField, useFieldProps } from '../FormField'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { defaultNumberMessages, type NumberFieldMessages } from './messages'
+import '../../styles/base.css'
 import './NumberField.css'
 
 export interface NumberFieldProps extends FieldProps, ValueProps<number, ChangeEvent<HTMLInputElement>>, NativeInputProps {

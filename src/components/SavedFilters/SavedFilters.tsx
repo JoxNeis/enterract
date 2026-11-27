@@ -8,6 +8,7 @@ import { Icon } from '../Icon'
 import { IconButton } from '../IconButton'
 import { Popover } from '../Popover'
 import { TextField } from '../TextField'
+import '../../styles/base.css'
 import './SavedFilters.css'
 
 export interface SavedView<F = unknown> {

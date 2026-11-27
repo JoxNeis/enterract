@@ -8,6 +8,7 @@ import { useControllableState } from '../../utils/useControllableState'
 import { FormField, useFieldProps } from '../FormField'
 import { Icon } from '../Icon'
 import { Spinner } from '../Spinner'
+import '../../styles/base.css'
 import './SearchField.css'
 
 export interface SearchFieldProps

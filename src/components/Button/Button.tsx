@@ -2,6 +2,7 @@ import type { ComponentProps, MouseEvent, ReactNode } from 'react'
 import { cx } from '../../utils/cx'
 import type { Size } from '../../utils/types'
 import { Spinner } from '../Spinner'
+import '../../styles/base.css'
 import './Button.css'
 import { flag } from '../../utils/flag'
 

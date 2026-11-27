@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-checkbox-group__options {
   display: flex;
   flex-direction: column;

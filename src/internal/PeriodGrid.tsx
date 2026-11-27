@@ -1,5 +1,6 @@
 import { useEffect, useRef, type KeyboardEvent } from 'react'
 import { flag } from '../utils/flag'
+import '../styles/base.css'
 import './PeriodGrid.css'
 
 export interface PeriodCell {

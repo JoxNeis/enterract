@@ -7,6 +7,7 @@ import { Icon } from '../Icon'
 import { typeaheadIndex } from '../Listbox'
 import { Spinner } from '../Spinner'
 import { checkState, descendantIds, flattenTree, matchingIds, type FlatNode, type TreeNode } from './treeUtils'
+import '../../styles/base.css'
 import './TreeView.css'
 
 export interface TreeViewProps<T = unknown> extends Omit<ComponentProps<'ul'>, 'onSelect' | 'children'> {

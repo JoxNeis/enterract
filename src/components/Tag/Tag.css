@@ -1,5 +1,3 @@
-@import '../../styles/tokens.css';
-
 .erp-tag {
   --erp-tag-bg: var(--erp-color-bg-muted);
   --erp-tag-color: var(--erp-color-text);

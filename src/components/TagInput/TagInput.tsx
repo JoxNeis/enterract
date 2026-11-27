@@ -6,6 +6,7 @@ import type { FieldProps } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { FormField, useFieldProps } from '../FormField'
 import { Tag } from '../Tag'
+import '../../styles/base.css'
 import './TagInput.css'
 
 export interface TagInputProps extends FieldProps, Omit<NativeInputProps, 'onBlur'> {

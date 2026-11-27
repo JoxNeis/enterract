@@ -5,6 +5,7 @@ import { cx } from '../../utils/cx'
 import type { FieldProps, ValueProps } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { FormField, useFieldProps } from '../FormField'
+import '../../styles/base.css'
 import './TextField.css'
 
 export interface TextFieldProps

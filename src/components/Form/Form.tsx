@@ -4,6 +4,7 @@ import type { Size } from '../../utils/types'
 import { Alert } from '../Alert'
 import { FieldDefaultsProvider } from '../FormField'
 import type { FormApi, FormValues } from './useForm'
+import '../../styles/base.css'
 import './Form.css'
 import { flag } from '../../utils/flag'
 

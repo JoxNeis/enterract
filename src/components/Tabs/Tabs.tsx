@@ -4,6 +4,7 @@ import { flag } from '../../utils/flag'
 import type { Size } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { Icon } from '../Icon'
+import '../../styles/base.css'
 import './Tabs.css'
 
 export interface TabItem {

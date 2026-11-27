@@ -11,6 +11,7 @@ import { FormField, useFieldProps } from '../FormField'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { Popover } from '../Popover'
+import '../../styles/base.css'
 import './DatePicker.css'
 
 export interface DatePickerProps

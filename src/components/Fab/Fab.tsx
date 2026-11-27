@@ -1,6 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react'
 import { cx } from '../../utils/cx'
 import { Icon, icons, type IconName } from '../Icon'
+import '../../styles/base.css'
 import './Fab.css'
 
 export interface FabProps extends Omit<ComponentProps<'button'>, 'children'> {

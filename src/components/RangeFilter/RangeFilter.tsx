@@ -7,6 +7,7 @@ import { CurrencyField } from '../CurrencyField'
 import { DatePicker } from '../DatePicker'
 import { FieldDefaultsProvider, FormField, useFieldProps } from '../FormField'
 import { NumberField } from '../NumberField'
+import '../../styles/base.css'
 import './RangeFilter.css'
 
 export interface RangeValue<T> {

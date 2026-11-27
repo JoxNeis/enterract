@@ -4,6 +4,7 @@ import { useControllableState } from '../../utils/useControllableState'
 import { IconButton } from '../IconButton'
 import type { PivotAggregate, PivotConfig } from '../PivotGrid'
 import { Select } from '../Select'
+import '../../styles/base.css'
 import './PivotFieldList.css'
 
 export interface PivotFieldDef {

@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, type ComponentProps, type 
 import { createPortal } from 'react-dom'
 import { cx } from '../../utils/cx'
 import { mergeRefs, useOutsidePointerDown, useStableCallback } from '../../utils/hooks'
+import '../../styles/base.css'
 import './Popover.css'
 
 export type PopoverPlacement =

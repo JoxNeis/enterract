@@ -5,6 +5,7 @@ import { flag } from '../../utils/flag'
 import type { FieldProps, Key, Option, ValueProps } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { FormField, useFieldProps } from '../FormField'
+import '../../styles/base.css'
 import './RadioGroup.css'
 
 export interface RadioGroupProps<K extends Key = string>

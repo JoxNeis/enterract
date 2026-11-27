@@ -3,6 +3,7 @@ import { cx } from '../../utils/cx'
 import type { FieldProps } from '../../utils/types'
 import { FieldMessage } from '../FieldMessage'
 import { Label } from '../Label'
+import '../../styles/base.css'
 import './FormField.css'
 import { flag } from '../../utils/flag'
 

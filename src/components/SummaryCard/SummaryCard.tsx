@@ -1,6 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react'
 import { cx } from '../../utils/cx'
 import { ValueDisplay, type ValueType } from '../ValueDisplay'
+import '../../styles/base.css'
 import './SummaryCard.css'
 
 export interface SummaryItem {

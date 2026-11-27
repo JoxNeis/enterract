@@ -7,6 +7,7 @@ import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { StatusBadge } from '../StatusBadge'
 import { WorkflowStages, type WorkflowStage } from '../WorkflowStages'
+import '../../styles/base.css'
 import './ApprovalPanel.css'
 
 export type ApprovalDecision = 'pending' | 'approved' | 'rejected' | 'skipped'

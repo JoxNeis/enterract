@@ -3,6 +3,7 @@ import { cx } from '../../utils/cx'
 import type { Size } from '../../utils/types'
 import { Icon } from '../Icon'
 import { documentStages, type WorkflowStage } from './stages'
+import '../../styles/base.css'
 import './WorkflowStages.css'
 
 export interface WorkflowStagesProps extends ComponentProps<'ol'> {

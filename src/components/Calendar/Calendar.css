@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-calendar {
   display: inline-flex;
   flex-direction: column;

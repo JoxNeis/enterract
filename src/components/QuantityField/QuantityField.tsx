@@ -1,6 +1,7 @@
 import type { Option } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { NumberField, type NumberFieldProps } from '../NumberField'
+import '../CurrencyField/CurrencyField.css'
 import './QuantityField.css'
 
 export interface QuantityFieldProps extends Omit<NumberFieldProps, 'suffix'> {

@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react'
 import { cx } from '../../utils/cx'
+import '../../styles/base.css'
 import './Badge.css'
 
 export interface BadgeProps extends ComponentProps<'span'> {

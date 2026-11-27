@@ -2,6 +2,7 @@ import type { ComponentProps } from 'react'
 import { cx } from '../../utils/cx'
 import type { Size } from '../../utils/types'
 import { Icon } from '../Icon'
+import '../../styles/base.css'
 import './Tag.css'
 
 export interface TagProps extends ComponentProps<'span'> {

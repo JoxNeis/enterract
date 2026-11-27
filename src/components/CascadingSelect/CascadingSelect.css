@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-cascading-select__levels {
   display: grid;
   grid-auto-flow: column;

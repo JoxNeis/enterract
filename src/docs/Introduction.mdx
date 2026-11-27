@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title='Introduction' />
+
+# enterract
+
+React components for ERP applications: forms and lookups, Excel-style data grids, filters, workflow, approvals, scheduling and reporting. Every component is accessible (WAI-ARIA patterns, full keyboard support), locale-aware (numbers, dates and currency) and themeable with CSS variables.
+
+## Install
+
+```sh
+npm install enterract
+```
+
+Peer dependencies: `react` and `react-dom` 19.
+
+## Use
+
+```tsx
+import { Button, TextField, LocaleProvider } from 'enterract'
+import { DataGrid, useGridRows } from 'enterract/components/DataGrid'
+
+<LocaleProvider locale='de-DE' currency='EUR'>
+  <TextField label='Reference' />
+  <Button variant='primary'>Save</Button>
+</LocaleProvider>
+```
+
+Styles load with each component. To change colors, fonts, spacing or shape, see **Theming** in the sidebar.
+
+## Using this Storybook
+
+- Each component has a **Docs** page (props, description, all stories) and stories for its states: Default, Disabled, ReadOnly, Required, WithError and Compact for form controls.
+- Change props live in the **Controls** panel; event handlers are logged in **Actions**.
+- Stories with a `play` function run an interaction test; see the **Interactions** panel.
+- Toolbar: **Density** switches comfortable/compact, **Locale** switches number and date formats (en-US, de-DE, id-ID, fr-FR).
+
+## Highlights
+
+- **Inputs**: TextField, NumberField, CurrencyField, PercentField, QuantityField, MaskedField, DatePicker, DateRangePicker, FiscalPeriodPicker
+- **Selection**: Select, MultiSelect, ComboBox, AutoComplete, Lookup (customers, items, accounts… through `columns` and `dataSource`), TreeSelect
+- **Grids**: DataGrid and LineItemGrid with change tracking, SpreadsheetGrid with formulas, TreeGrid, PivotGrid, MatrixEditor. All select, copy, paste and fill like Excel.
+- **Workflow**: WorkflowStages, ApprovalPanel, ApproverPicker, CommentsPanel, ActivityFeed
+- **Planning**: GanttChart, Scheduler, ResourcePlanner, KanbanBoard, Timeline
+- **Reporting**: Chart, KpiCard, SummaryCard, PivotGrid

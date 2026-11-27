@@ -6,6 +6,7 @@ import { FileUpload, type FileUploadProps } from '../FileUpload'
 import { Icon, type IconName } from '../Icon'
 import { IconButton } from '../IconButton'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './AttachmentList.css'
 
 export interface Attachment {

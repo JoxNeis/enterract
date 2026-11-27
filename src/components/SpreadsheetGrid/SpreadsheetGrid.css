@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-spreadsheet {
   display: flex;
   flex-direction: column;

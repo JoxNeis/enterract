@@ -8,6 +8,7 @@ import { FormField, useFieldProps } from '../FormField'
 import { Popover } from '../Popover'
 import { SearchField } from '../SearchField'
 import { findNode, TreeView, type TreeNode } from '../TreeView'
+import '../../styles/base.css'
 import './TreeSelect.css'
 
 interface BaseProps<T> extends FieldProps, NativeDivProps {

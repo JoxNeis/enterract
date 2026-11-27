@@ -7,6 +7,7 @@ import { Checkbox } from '../Checkbox'
 import { IconButton } from '../IconButton'
 import { useLocale } from '../LocaleProvider'
 import { TextArea } from '../TextArea'
+import '../../styles/base.css'
 import './CommentsPanel.css'
 
 export interface CommentAuthor {

@@ -4,6 +4,7 @@ import type { Key, Option } from '../../utils/types'
 import { Icon } from '../Icon'
 import { Spinner } from '../Spinner'
 import { getOptionId, nextActiveIndex, typeaheadIndex } from './listNavigation'
+import '../../styles/base.css'
 import './Listbox.css'
 import { flag } from '../../utils/flag'
 

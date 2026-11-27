@@ -4,6 +4,7 @@ import type { FieldControlProps } from '../components/FormField'
 import { cx } from '../utils/cx'
 import { flag } from '../utils/flag'
 import type { FieldProps } from '../utils/types'
+import '../styles/base.css'
 import './InlineField.css'
 
 export interface InlineFieldProps extends Omit<FieldProps, 'name'> {

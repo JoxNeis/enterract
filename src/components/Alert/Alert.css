@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-alert {
   --erp-alert-accent: var(--erp-color-info);
   --erp-alert-bg: var(--erp-color-info-subtle);

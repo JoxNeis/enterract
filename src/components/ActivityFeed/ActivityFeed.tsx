@@ -4,6 +4,7 @@ import { formatDate } from '../../utils/date'
 import { formatDateTime, initials } from '../../utils/format'
 import { Button } from '../Button'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './ActivityFeed.css'
 
 export interface FieldChange {

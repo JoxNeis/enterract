@@ -2,6 +2,7 @@ import type { ComponentProps, ReactNode } from 'react'
 import { cx } from '../../utils/cx'
 import { focusField } from '../../utils/focus'
 import { Icon, type IconName } from '../Icon'
+import '../../styles/base.css'
 import './Alert.css'
 
 export type AlertTone = 'info' | 'success' | 'warning' | 'error'

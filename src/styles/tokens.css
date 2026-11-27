@@ -1,8 +1,11 @@
 /*
  * enterract design tokens. Override any --erp-* property on :root (or on a subtree) to theme.
  * Density: set data-density="compact" on any ancestor to switch controls to the small size.
+ *
+ * The defaults use :where(), which has zero specificity, so your own `:root { --erp-… }` (or any
+ * selector) always wins, no matter which stylesheet loads first.
  */
-:root {
+:where(:root) {
   --erp-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --erp-font-family-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
   --erp-font-size-xs: 0.75rem;
@@ -95,14 +98,15 @@
   --erp-chart-axis: #c4ccd6;
 }
 
-[data-density='compact'] {
+/* Wins over :where(:root) by coming later; your own selectors still win over both. */
+:where([data-density='compact']) {
   --erp-control-height: var(--erp-control-height-sm);
   --erp-control-padding-x: var(--erp-control-padding-x-sm);
   --erp-font-size: var(--erp-font-size-sm);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :root {
+  :where(:root) {
     --erp-transition: 0ms;
   }
 }

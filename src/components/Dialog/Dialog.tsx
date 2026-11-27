@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { cx } from '../../utils/cx'
 import { useFocusTrap } from '../../utils/hooks'
 import { Icon } from '../Icon'
+import '../../styles/base.css'
 import './Dialog.css'
 
 export interface DialogProps extends Omit<ComponentProps<'div'>, 'title' | 'role'> {

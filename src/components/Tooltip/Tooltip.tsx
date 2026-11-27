@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import { Popover, type PopoverPlacement } from '../Popover'
+import '../../styles/base.css'
 import './Tooltip.css'
 
 export interface TooltipProps {

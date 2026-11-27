@@ -8,6 +8,7 @@ import { FormField, useFieldProps } from '../FormField'
 import { Icon } from '../Icon'
 import { getOptionId, Listbox, nextActiveIndex } from '../Listbox'
 import { Popover } from '../Popover'
+import '../../styles/base.css'
 import './ComboBox.css'
 
 export interface ComboBoxProps<K extends Key = string>

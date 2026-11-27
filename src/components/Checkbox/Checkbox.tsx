@@ -8,6 +8,7 @@ import type { FieldProps, ValueProps } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { useFieldProps } from '../FormField'
 import { Icon } from '../Icon'
+import '../../styles/base.css'
 import './Checkbox.css'
 
 export interface CheckboxProps extends FieldProps, ValueProps<boolean, ChangeEvent<HTMLInputElement>>, NativeInputProps {

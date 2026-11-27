@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { createPortal } from 'react-dom'
 import { Alert } from '../Alert'
 import { ToastContext, type ToastApi, type ToastItem, type ToastOptions } from './toastContext'
+import '../../styles/base.css'
+import '../Alert/Alert.css'
 import './Toast.css'
 
 export interface ToastProps {

@@ -11,6 +11,7 @@ import { useLocale } from '../LocaleProvider'
 import { NumberField } from '../NumberField'
 import { Spinner } from '../Spinner'
 import { TextField } from '../TextField'
+import '../../styles/base.css'
 import './TreeGrid.css'
 
 export interface TreeGridRow<T> {

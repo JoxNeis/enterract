@@ -1,6 +1,3 @@
-@import '../../styles/base.css';
-@import '../Alert/Alert.css';
-
 .erp-toast-region {
   position: fixed;
   z-index: var(--erp-z-toast);

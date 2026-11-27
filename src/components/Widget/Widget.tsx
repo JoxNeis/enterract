@@ -5,6 +5,7 @@ import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { MenuButton, type MenuItem } from '../MenuButton'
 import { Spinner } from '../Spinner'
+import '../../styles/base.css'
 import './Widget.css'
 
 export interface WidgetProps extends Omit<ComponentProps<'section'>, 'title'> {

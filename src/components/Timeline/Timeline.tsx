@@ -3,6 +3,7 @@ import { cx } from '../../utils/cx'
 import { addDays, addMonths, daysBetween, formatDate, startOfMonth, todayISO } from '../../utils/date'
 import { flag } from '../../utils/flag'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './Timeline.css'
 
 export interface TimelineItem {

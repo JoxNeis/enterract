@@ -5,6 +5,7 @@ import { flag } from '../../utils/flag'
 import type { FieldProps, ValueProps } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { useFieldProps } from '../FormField'
+import '../../styles/base.css'
 import './Switch.css'
 
 export interface SwitchProps extends FieldProps, ValueProps<boolean, ChangeEvent<HTMLInputElement>>, NativeInputProps {

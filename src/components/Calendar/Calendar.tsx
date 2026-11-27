@@ -17,6 +17,7 @@ import { flag } from '../../utils/flag'
 import { useControllableState } from '../../utils/useControllableState'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './Calendar.css'
 
 export interface CalendarProps extends Omit<ComponentProps<'div'>, 'onChange' | 'defaultValue' | 'onSelect'> {

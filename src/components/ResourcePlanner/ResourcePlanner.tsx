@@ -6,6 +6,7 @@ import { formatNumber } from '../../utils/number'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { dayLoad, isWeekend } from './dayLoad'
+import '../../styles/base.css'
 import './ResourcePlanner.css'
 
 export interface PlannerResource {

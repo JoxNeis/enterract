@@ -5,6 +5,7 @@ import { useControllableState } from '../../utils/useControllableState'
 import { Icon } from '../Icon'
 import { IconButton } from '../IconButton'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './DocumentPreview.css'
 
 export interface PreviewFile {

@@ -9,6 +9,7 @@ import { FormField, useFieldProps } from '../FormField'
 import { getOptionId, Listbox, nextActiveIndex } from '../Listbox'
 import { Popover } from '../Popover'
 import { Spinner } from '../Spinner'
+import '../../styles/base.css'
 import './AutoComplete.css'
 
 export type Suggestion = string | Option

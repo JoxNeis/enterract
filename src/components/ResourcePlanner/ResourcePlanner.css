@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 /* Load levels use one sequential hue (light → dark blue): magnitude, not identity. */
 .erp-resource-planner {
   overflow-x: auto;

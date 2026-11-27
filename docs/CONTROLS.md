@@ -74,21 +74,18 @@ The full list of controls planned for **enterract**. This file tracks what exist
 
 ## 5. ERP-Specific Lookup Controls
 
-These are **presets of `Lookup`**. Each one sets columns, display format and a data source for one master-data entity. Build `Lookup` first, then each preset should take only a few lines.
+There are **no per-entity lookup components**. A customer, vendor, item, account or employee selector is the same control with different data, so the library ships one `Lookup` and you configure it per screen: `label`, `dataSource`, `columns` and `displayValue`. If an app uses the same setup in many places, wrap it in a small component in the app (see the `Lookup` stories `GlAccount`, `Item` and `Person`).
 
-| Control | Component | Priority | Status | Typical display |
-| --- | --- | --- | --- | --- |
-| Customer selector | `CustomerLookup` | P1 | Planned | Code, Name, City |
-| Vendor selector | `VendorLookup` | P1 | Planned | Code, Name |
-| Item/Product selector | `ItemLookup` | P1 | Planned | SKU, Description, UoM, On-hand |
-| Warehouse selector | `WarehouseLookup` | P1 | Planned | Code, Name |
-| Employee selector | `EmployeeLookup` | P1 | Planned | Avatar, Name, Dept |
-| Account selector | `AccountLookup` | P1 | Planned | Account no., Name, Type |
-| Cost center selector | `CostCenterLookup` | P2 | Planned | |
-| Project selector | `ProjectLookup` | P2 | Planned | |
-| Department selector | `DepartmentLookup` | P2 | Planned | |
-| Location selector | `LocationLookup` | P2 | Planned | |
-| Business partner selector | `BusinessPartnerLookup` | P2 | Planned | Customer + vendor union |
+Recommended result columns:
+
+| Selector | `columns` | `displayValue` |
+| --- | --- | --- |
+| Customer / vendor / business partner | Code, Name, City (partner: Role) | `C1008 · Harbor Marine` |
+| Item / product | SKU, Description, Unit, On hand (right-aligned) | `BOLT-M6 · Hex bolt M6 × 20` |
+| Warehouse, cost center, department, project | Code, Name (project: Status) | `CC120 · Sales Jakarta` |
+| Location / bin | Code, Name, Warehouse | `A-01-1` |
+| Employee | Avatar (initials), Name, Department | `Dewi Lestari` |
+| GL account | Account no., Name, Type | `6100 · Salaries` |
 
 ## 6. Data Grid Controls
 
@@ -188,7 +185,7 @@ These are action **definitions** (label, icon, shortcut, confirmation, permissio
 | Control | Component | Priority | Status | Notes |
 | --- | --- | --- | --- | --- |
 | Status badge | `StatusBadge` | P0 | Planned | Maps status → color/label |
-| Approval selector | `ApproverPicker` | P1 | Planned | Built on `EmployeeLookup` |
+| Approval selector | `ApproverPicker` | P1 | Planned | Ordered approvers; searches with `Lookup` |
 | Workflow stage indicator | `WorkflowStages` | P1 | Planned | Draft → Submitted → Approved → Posted |
 | Workflow timeline | `WorkflowTimeline` | P1 | Planned | |
 | Approval workflow panel | `ApprovalPanel` | P0 | Planned | Combines stages, approvers and approve/reject actions |

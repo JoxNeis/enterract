@@ -33,6 +33,7 @@ import {
   validateRows,
 } from './gridRows'
 import type { FieldOf, GridColumn, GridRow, GridSort } from './types'
+import '../../styles/base.css'
 import './DataGrid.css'
 
 export interface DataGridProps<TData, TMeta = undefined>

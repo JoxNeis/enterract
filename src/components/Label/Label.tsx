@@ -1,6 +1,7 @@
 import type { ComponentProps } from 'react'
 import { cx } from '../../utils/cx'
 import type { Size } from '../../utils/types'
+import '../../styles/base.css'
 import './Label.css'
 import { flag } from '../../utils/flag'
 

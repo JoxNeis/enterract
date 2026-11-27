@@ -7,6 +7,7 @@ import { useControllableState } from '../../utils/useControllableState'
 import { FormField, useFieldProps } from '../FormField'
 import { Icon, type IconName } from '../Icon'
 import { htmlToText, sanitizeHtml } from './sanitize'
+import '../../styles/base.css'
 import './RichTextEditor.css'
 
 export interface RichTextEditorProps extends FieldProps, NativeDivProps {

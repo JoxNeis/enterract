@@ -4,6 +4,7 @@ import { flag } from '../../utils/flag'
 import { formatNumber } from '../../utils/number'
 import type { Size } from '../../utils/types'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './ProgressBar.css'
 
 export interface ProgressBarProps extends Omit<ComponentProps<'div'>, 'children'> {

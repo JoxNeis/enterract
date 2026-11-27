@@ -1,6 +1,7 @@
 import type { ComponentProps } from 'react'
 import { cx } from '../../utils/cx'
 import { Icon, type IconName } from '../Icon'
+import '../../styles/base.css'
 import './FieldMessage.css'
 
 export type FieldMessageTone = 'help' | 'error' | 'warning' | 'success'

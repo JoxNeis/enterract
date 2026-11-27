@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-data-grid {
   --erp-grid-row-height: 2rem;
   display: flex;

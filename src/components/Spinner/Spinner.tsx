@@ -1,5 +1,6 @@
 import type { ComponentProps } from 'react'
 import { cx } from '../../utils/cx'
+import '../../styles/base.css'
 import './Spinner.css'
 
 export interface SpinnerProps extends ComponentProps<'span'> {

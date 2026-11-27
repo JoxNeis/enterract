@@ -6,6 +6,7 @@ import { mergeRefs } from '../../utils/hooks'
 import type { FieldProps, ValueProps } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { FormField, useFieldProps } from '../FormField'
+import '../../styles/base.css'
 import './TextArea.css'
 
 export interface TextAreaProps

@@ -7,6 +7,7 @@ import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { Tag } from '../Tag'
 import { moveCard } from './moveCard'
+import '../../styles/base.css'
 import './KanbanBoard.css'
 
 export interface KanbanColumn {

@@ -1,6 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react'
 import { cx } from '../../utils/cx'
 import { Icon } from '../Icon'
+import '../../styles/base.css'
 import './DrillLink.css'
 
 export interface DrillLinkProps extends Omit<ComponentProps<'button'>, 'onClick'> {

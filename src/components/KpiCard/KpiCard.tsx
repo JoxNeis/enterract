@@ -3,6 +3,7 @@ import { cx } from '../../utils/cx'
 import { formatNumber } from '../../utils/number'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './KpiCard.css'
 
 export interface KpiCardProps extends Omit<ComponentProps<'section'>, 'title'> {

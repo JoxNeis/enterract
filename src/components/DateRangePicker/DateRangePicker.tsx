@@ -12,6 +12,7 @@ import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { Popover } from '../Popover'
 import { defaultRangePresets, type DateRange, type DateRangePreset } from './presets'
+import '../../styles/base.css'
 import './DateRangePicker.css'
 
 export interface DateRangePickerProps extends FieldProps, NativeDivProps {

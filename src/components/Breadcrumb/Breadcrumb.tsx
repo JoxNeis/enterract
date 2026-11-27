@@ -2,6 +2,7 @@ import type { ComponentProps, MouseEvent, ReactNode } from 'react'
 import { cx } from '../../utils/cx'
 import { Icon } from '../Icon'
 import { MenuButton } from '../MenuButton'
+import '../../styles/base.css'
 import './Breadcrumb.css'
 
 export interface BreadcrumbItem {

@@ -4,6 +4,7 @@ import { addDays, daysBetween, formatDate, todayISO, weekday } from '../../utils
 import { flag } from '../../utils/flag'
 import { formatNumber } from '../../utils/number'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './GanttChart.css'
 
 export interface GanttTask {

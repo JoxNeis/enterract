@@ -8,6 +8,7 @@ import { FormField, useFieldProps } from '../FormField'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { fileMatchesAccept } from './accept'
+import '../../styles/base.css'
 import './FileUpload.css'
 
 export type UploadStatus = 'uploading' | 'done' | 'error' | 'cancelled'

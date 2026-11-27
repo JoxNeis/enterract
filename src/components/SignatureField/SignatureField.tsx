@@ -9,6 +9,7 @@ import { Button } from '../Button'
 import { FormField, useFieldProps } from '../FormField'
 import { useLocale } from '../LocaleProvider'
 import { TextField } from '../TextField'
+import '../../styles/base.css'
 import './SignatureField.css'
 
 export interface SignatureValue {

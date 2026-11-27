@@ -12,6 +12,7 @@ import { getOptionId, Listbox, nextActiveIndex } from '../Listbox'
 import { Popover } from '../Popover'
 import { Spinner } from '../Spinner'
 import type { LookupDataSource } from './dataSource'
+import '../../styles/base.css'
 import './Lookup.css'
 import { flag } from '../../utils/flag'
 

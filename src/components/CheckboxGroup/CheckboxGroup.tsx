@@ -5,6 +5,7 @@ import type { FieldProps, Key, Option } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { Checkbox } from '../Checkbox'
 import { FieldDefaultsProvider, FormField, useFieldProps } from '../FormField'
+import '../../styles/base.css'
 import './CheckboxGroup.css'
 
 export interface CheckboxGroupProps<K extends Key = string> extends FieldProps, NativeDivProps {

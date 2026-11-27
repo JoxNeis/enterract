@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-file-upload__body {
   display: flex;
   flex-direction: column;

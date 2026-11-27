@@ -5,6 +5,7 @@ import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { SearchField } from '../SearchField'
 import { Select } from '../Select'
+import '../../styles/base.css'
 import './SearchPanel.css'
 
 export interface SearchRequest {

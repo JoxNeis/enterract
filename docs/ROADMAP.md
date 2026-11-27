@@ -31,7 +31,7 @@ Build in dependency order. Each phase only uses what earlier phases built.
 
 ## Phase 3: Breadth (P1)
 - Remaining numeric fields (`PercentField`, `QuantityField`) and date pickers
-- ERP lookup presets (`CustomerLookup`, `ItemLookup`, `AccountLookup`…)
+- ERP selectors as `Lookup` configurations (customer, item, account…): documented column setups, no extra components
 - Grid features: grouping, frozen columns, master-detail, `TreeGrid`
 - Navigation: `Accordion`, `Wizard`, `Breadcrumb`, `Drawer`, `SidePanel`
 - Workflow: `WorkflowStages`, `WorkflowTimeline`, `ActivityFeed`

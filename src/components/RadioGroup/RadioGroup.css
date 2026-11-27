@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-radio-group__options {
   display: flex;
   flex-direction: column;

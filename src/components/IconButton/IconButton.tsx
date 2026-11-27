@@ -3,6 +3,7 @@ import { cx } from '../../utils/cx'
 import { Button, type ButtonProps } from '../Button'
 import { Icon, icons, type IconName } from '../Icon'
 import { Tooltip } from '../Tooltip'
+import '../Button/Button.css'
 import './IconButton.css'
 
 export interface IconButtonProps extends Omit<ButtonProps, 'children' | 'icon' | 'iconEnd' | 'fullWidth'> {

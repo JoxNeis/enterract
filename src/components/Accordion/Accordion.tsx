@@ -3,6 +3,7 @@ import { cx } from '../../utils/cx'
 import { flag } from '../../utils/flag'
 import { useControllableState } from '../../utils/useControllableState'
 import { Icon } from '../Icon'
+import '../../styles/base.css'
 import './Accordion.css'
 
 export interface AccordionItem {

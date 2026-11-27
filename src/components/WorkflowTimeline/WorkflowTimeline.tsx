@@ -3,6 +3,7 @@ import { cx } from '../../utils/cx'
 import { formatDateTime } from '../../utils/format'
 import { Icon, type IconName } from '../Icon'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './WorkflowTimeline.css'
 
 export type TimelineState = 'done' | 'current' | 'pending' | 'rejected' | 'skipped'

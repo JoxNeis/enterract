@@ -9,6 +9,7 @@ import type { FieldProps, ValueProps } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { FormField, useFieldProps } from '../FormField'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './CurrencyField.css'
 
 export interface CurrencyFieldProps extends FieldProps, ValueProps<string, ChangeEvent<HTMLInputElement>>, NativeInputProps {

@@ -4,6 +4,7 @@ import { formatNumber } from '../../utils/number'
 import { useControllableState } from '../../utils/useControllableState'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './QuickFilter.css'
 
 export interface QuickFilterOption {

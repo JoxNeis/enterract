@@ -10,6 +10,7 @@ import { FormField, useFieldProps } from '../FormField'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { Popover } from '../Popover'
+import '../../styles/base.css'
 import './MonthPicker.css'
 
 export interface MonthPickerProps extends FieldProps, NativeDivProps {

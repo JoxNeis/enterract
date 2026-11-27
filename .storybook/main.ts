@@ -11,12 +11,28 @@ if (process.platform === 'win32') {
   if (normalized !== cwd) process.chdir(normalized)
 }
 
+/** Plugins that only make sense for the library build (type declarations, per-chunk CSS imports). */
+const LIBRARY_ONLY_PLUGINS = /dts|lib-inject-css/
+
+const pluginName = (plugin: unknown) =>
+  typeof plugin === 'object' && plugin !== null && 'name' in plugin ? String(plugin.name) : ''
+
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
   addons: ['@storybook/addon-docs'],
   framework: '@storybook/react-vite',
   core: {
     disableTelemetry: true,
+  },
+  // Storybook reuses vite.config.ts; drop the library-mode settings so the static site has no
+  // .d.ts files and Storybook controls its own entry points and chunking.
+  viteFinal: (viteConfig) => {
+    viteConfig.plugins = (viteConfig.plugins ?? []).flat().filter((plugin) => !LIBRARY_ONLY_PLUGINS.test(pluginName(plugin)))
+    if (viteConfig.build) {
+      viteConfig.build.lib = false
+      viteConfig.build.rolldownOptions = undefined
+    }
+    return viteConfig
   },
 }
 

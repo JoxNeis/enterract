@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-attachment-list {
   display: flex;
   flex-direction: column;

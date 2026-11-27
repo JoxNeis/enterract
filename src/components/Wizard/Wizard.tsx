@@ -5,6 +5,7 @@ import { useControllableState } from '../../utils/useControllableState'
 import { Alert } from '../Alert'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
+import '../../styles/base.css'
 import './Wizard.css'
 
 /** Result of a step check: `true`/undefined passes; a string or list of strings blocks with messages. */

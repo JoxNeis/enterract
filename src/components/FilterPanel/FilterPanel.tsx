@@ -12,6 +12,7 @@ import { RangeFilter, type RangeValue } from '../RangeFilter'
 import { Select } from '../Select'
 import { TextField } from '../TextField'
 import { isFilterActive } from './filterValues'
+import '../../styles/base.css'
 import './FilterPanel.css'
 
 export type FilterType = 'text' | 'select' | 'multiselect' | 'checkbox' | 'number-range' | 'date-range' | 'lookup'

@@ -1,5 +1,3 @@
-@import '../../styles/tokens.css';
-
 .erp-status-badge {
   --erp-badge-color: var(--erp-color-text-muted);
   --erp-badge-bg: var(--erp-color-bg-muted);

@@ -15,6 +15,7 @@ import {
   type ConfirmOptions,
   type StandardActionId,
 } from './actions'
+import '../Button/Button.css'
 import './ActionBar.css'
 
 export interface ActionPayload {

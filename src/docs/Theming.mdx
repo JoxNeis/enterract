@@ -1,0 +1,98 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Badge, Button, Checkbox, Select, TextField } from '../main'
+
+<Meta title='Theming' />
+
+# Theming and customization
+
+Every color, font, size, radius and shadow comes from a CSS variable named `--erp-*`. Override them in your own stylesheet; the library never needs to be rebuilt.
+
+```css
+/* app.css */
+:root {
+  --erp-color-primary: #7a1fa2;
+  --erp-color-primary-hover: #63168a;
+  --erp-color-primary-subtle: #f3e5f8;
+  --erp-color-focus: #7a1fa2;
+  --erp-radius: 0;
+}
+```
+
+**Your values always win.** The defaults are declared with `:where(:root)`, which has zero specificity, so a plain `:root` rule in your CSS overrides them no matter which stylesheet loads first.
+
+## Live example
+
+The same components, default on the left and themed on the right, by setting tokens on a wrapper element:
+
+export const Demo = () => (
+  <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+    <div style={{ display: 'grid', gap: 12, padding: 16, width: 280, border: '1px solid var(--erp-color-border-subtle)' }}>
+      <TextField label='Reference' defaultValue='SO-1043' />
+      <Select label='Status' options={[{ key: 'open', label: 'Open' }, { key: 'posted', label: 'Posted' }]} defaultValue='open' />
+      <Checkbox label='Taxable' defaultValue />
+      <div style={{ display: 'flex', gap: 8 }}>
+        <Button variant='primary'>Save</Button>
+        <Button>Cancel</Button>
+        <Badge tone='success'>Posted</Badge>
+      </div>
+    </div>
+    <div
+      style={{
+        display: 'grid',
+        gap: 12,
+        padding: 16,
+        width: 280,
+        '--erp-color-primary': '#7a1fa2',
+        '--erp-color-primary-hover': '#63168a',
+        '--erp-color-primary-subtle': '#f3e5f8',
+        '--erp-color-focus': '#7a1fa2',
+        '--erp-radius': '0',
+        '--erp-font-family': 'Georgia, serif',
+        '--erp-color-bg': '#fffdf7',
+        '--erp-color-border': '#c9b98f',
+        border: '1px solid var(--erp-color-border)',
+        background: 'var(--erp-color-bg)',
+        fontFamily: 'var(--erp-font-family)',
+      }}
+    >
+      <TextField label='Reference' defaultValue='SO-1043' />
+      <Select label='Status' options={[{ key: 'open', label: 'Open' }, { key: 'posted', label: 'Posted' }]} defaultValue='open' />
+      <Checkbox label='Taxable' defaultValue />
+      <div style={{ display: 'flex', gap: 8 }}>
+        <Button variant='primary'>Save</Button>
+        <Button>Cancel</Button>
+        <Badge tone='success'>Posted</Badge>
+      </div>
+    </div>
+  </div>
+)
+
+<Demo />
+
+## Scoped themes and density
+
+- Set tokens on any element to theme only that part of the page: dark mode (`[data-theme='dark'] { … }`), a brand per tenant, a highlighted panel.
+- Set `data-density="compact"` on any ancestor for the small control size (or use the **Density** toolbar above).
+
+## Restyling one component
+
+Every component accepts `className` and renders stable `erp-*` classes and `data-*` state attributes (listed in each component's **Styling** table in `docs/components`). Prefix your rules with an app-level class so they win:
+
+```css
+.my-app .erp-button[data-variant='primary'] {
+  border-radius: var(--erp-radius-pill);
+}
+```
+
+## Main tokens
+
+- **Typography**: `--erp-font-family`, `--erp-font-size-xs` … `--erp-font-size-2xl`, `--erp-font-weight-medium`, `--erp-font-weight-bold`
+- **Surfaces and text**: `--erp-color-bg`, `--erp-color-bg-subtle`, `--erp-color-bg-muted`, `--erp-color-bg-hover`, `--erp-color-text`, `--erp-color-text-muted`
+- **Brand and focus**: `--erp-color-primary`, `--erp-color-primary-hover`, `--erp-color-primary-subtle`, `--erp-color-on-primary`, `--erp-color-focus`
+- **Status**: `--erp-color-danger`, `--erp-color-warning`, `--erp-color-success`, `--erp-color-info` (each with `-subtle`)
+- **Shape and space**: `--erp-radius-sm`, `--erp-radius`, `--erp-radius-lg`, `--erp-space-1` … `--erp-space-6`
+- **Controls**: `--erp-control-height`, `--erp-control-padding-x` (and `-sm` variants)
+- **Grids**: `--erp-color-selected`, `--erp-color-changed`, `--erp-color-added`
+- **Charts**: `--erp-chart-1` … `--erp-chart-8`
+
+The full list with defaults is in `docs/THEMING.md` and `src/styles/tokens.css`.

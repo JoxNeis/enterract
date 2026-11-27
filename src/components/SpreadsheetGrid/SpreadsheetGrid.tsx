@@ -5,6 +5,7 @@ import { flag } from '../../utils/flag'
 import { useControllableState } from '../../utils/useControllableState'
 import { useLocale } from '../LocaleProvider'
 import { address, columnName, evaluateSheet, isError, shiftFormula, type CellValue, type Sheet } from './formula'
+import '../../styles/base.css'
 import './SpreadsheetGrid.css'
 
 export interface SpreadsheetGridProps extends Omit<ComponentProps<'div'>, 'onChange' | 'defaultValue'> {

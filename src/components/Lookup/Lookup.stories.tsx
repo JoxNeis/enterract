@@ -1,6 +1,15 @@
 import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, fn, screen, userEvent, waitFor, within } from 'storybook/test'
+import {
+  accountSource,
+  employeeSource,
+  itemSource,
+  type SampleAccount,
+  type SampleEmployee,
+  type SampleItem,
+} from '../../test/erpFixtures'
+import { initials } from '../../utils/format'
 import { formatNumber } from '../../utils/number'
 import { Lookup, type LookupProps } from './Lookup'
 import { customerSource, type Customer } from './Lookup.fixtures'
@@ -101,3 +110,102 @@ export const Required: Story = { args: { required: true } }
 export const WithError: Story = { args: { required: true, error: 'Customer is blocked for new orders', value: 'C1002' } }
 
 export const Compact: Story = { args: { size: 'sm' } }
+
+/*
+ * One Lookup for every kind of master data. There are no CustomerLookup / AccountLookup /
+ * ItemLookup components: give Lookup a label, a dataSource, columns and a displayValue.
+ * Wrap that in your own app component if you use the same setup on many screens.
+ */
+
+function Example<T>(props: Omit<LookupProps<T>, 'value' | 'onChange'>) {
+  const [value, setValue] = useState<string | null>(null)
+  return (
+    <Lookup<T>
+      {...props}
+      value={value}
+      onChange={(key) => {
+        setValue(key)
+      }}
+    />
+  )
+}
+
+/** General ledger account: number, name and type; the input shows `6100 · Salaries`. */
+export const GlAccount: Story = {
+  render: () => (
+    <Example<SampleAccount>
+      label='Expense account'
+      dataSource={accountSource}
+      dropdownWidth='30rem'
+      displayValue={(a) => `${a.number} · ${a.name}`}
+      columns={[
+        { key: 'number', header: 'Account', width: '5rem' },
+        { key: 'name', header: 'Name', width: '2fr' },
+        { key: 'type', header: 'Type', width: '1fr' },
+      ]}
+    />
+  ),
+  play: async ({ canvasElement }) => {
+    await userEvent.type(within(canvasElement).getByRole('combobox', { name: 'Expense account' }), '61')
+    await waitFor(() => expect(screen.getByRole('option', { name: /Salaries/ })).toBeVisible())
+    await userEvent.keyboard('{Enter}')
+    await expect(within(canvasElement).getByRole('combobox', { name: 'Expense account' })).toHaveValue('6100 · Salaries')
+  },
+}
+
+/** Item: SKU, description, unit and stock on hand (right-aligned number column). */
+export const Item: Story = {
+  render: () => (
+    <Example<SampleItem>
+      label='Item'
+      dataSource={itemSource}
+      dropdownWidth='34rem'
+      displayValue={(i) => `${i.sku} · ${i.description}`}
+      columns={[
+        { key: 'sku', header: 'SKU', width: '6rem' },
+        { key: 'description', header: 'Description', width: '2fr' },
+        { key: 'uom', header: 'Unit', width: '4rem' },
+        { key: 'onHand', header: 'On hand', align: 'end', width: '6rem', render: (i) => formatNumber(i.onHand, 'en-US') },
+      ]}
+    />
+  ),
+}
+
+/** Person: initials avatar, name and department (custom `render` in a column). */
+export const Person: Story = {
+  render: () => (
+    <Example<SampleEmployee>
+      label='Requested by'
+      dataSource={employeeSource}
+      dropdownWidth='28rem'
+      displayValue={(e) => e.name}
+      columns={[
+        {
+          key: 'avatar',
+          header: '',
+          width: '2rem',
+          render: (e) => (
+            <span
+              aria-hidden='true'
+              style={{
+                display: 'inline-grid',
+                placeItems: 'center',
+                width: 24,
+                height: 24,
+                fontSize: 10,
+                fontWeight: 700,
+                borderRadius: '50%',
+                color: 'var(--erp-color-primary)',
+                background: 'var(--erp-color-primary-subtle)',
+              }}
+            >
+              {initials(e.name)}
+            </span>
+          ),
+        },
+        { key: 'name', header: 'Name', width: '2fr' },
+        { key: 'department', header: 'Department', width: '1fr' },
+      ]}
+    />
+  ),
+}

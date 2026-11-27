@@ -2,6 +2,17 @@
   "name": "enterract",
   "private": true,
   "version": "0.0.0",
+  "description": "React component library for ERP applications: forms, lookups, Excel-style data grids, workflow and approval controls.",
+  "license": "Apache-2.0",
+  "keywords": [
+    "react",
+    "components",
+    "erp",
+    "data-grid",
+    "forms",
+    "design-system",
+    "ui"
+  ],
   "type": "module",
   "files": [
     "dist"
@@ -16,7 +27,8 @@
     "./components/*": {
       "types": "./dist/components/*/index.d.ts",
       "import": "./dist/components/*/index.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "sideEffects": [
     "**/*.css"
@@ -35,8 +47,8 @@
     "prepublishOnly": "npm run check && npm run build"
   },
   "peerDependencies": {
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

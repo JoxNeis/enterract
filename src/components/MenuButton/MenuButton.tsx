@@ -5,6 +5,7 @@ import { Button, type ButtonProps } from '../Button'
 import { Icon } from '../Icon'
 import { typeaheadIndex } from '../Listbox'
 import { Popover, type PopoverPlacement } from '../Popover'
+import '../Button/Button.css'
 import './MenuButton.css'
 
 export interface MenuItem {

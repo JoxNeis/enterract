@@ -3,17 +3,53 @@ import { cx } from '../../utils/cx'
 import { initials } from '../../utils/format'
 import type { FieldProps } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
-import { EmployeeLookup, type Employee } from '../EmployeeLookup'
 import { FormField, useFieldProps } from '../FormField'
 import { IconButton } from '../IconButton'
-import type { LookupDataSource } from '../Lookup'
-import '../Lookup/presets.css'
+import { Lookup, type LookupColumn, type LookupDataSource } from '../Lookup'
+import '../../styles/base.css'
 import './ApproverPicker.css'
 
-export interface ApproverPickerProps<T extends Employee = Employee>
+/** Minimum shape of a person who can approve. Your records may have more fields. */
+export interface Approver {
+  id: string
+  name: string
+  department?: string
+  title?: string
+  avatarUrl?: string
+}
+
+/** Avatar (photo or initials), name and department: the search results of the approver lookup. */
+function approverColumns<T extends Approver>(): LookupColumn<T>[] {
+  return [
+    {
+      key: 'avatar',
+      header: '',
+      width: '2rem',
+      render: (e) => (
+        <span
+          className='erp-approver-picker__avatar'
+          aria-hidden='true'
+        >
+          {e.avatarUrl ? (
+            <img
+              src={e.avatarUrl}
+              alt=''
+            />
+          ) : (
+            initials(e.name)
+          )}
+        </span>
+      ),
+    },
+    { key: 'name', header: 'Name', width: '2fr' },
+    { key: 'department', header: 'Department', width: '1fr' },
+  ]
+}
+
+export interface ApproverPickerProps<T extends Approver = Approver>
   extends Omit<FieldProps, 'name'>, Omit<ComponentProps<'div'>, 'onChange' | 'defaultValue' | keyof FieldProps> {
   dataSource: LookupDataSource<T>
-  /** Employee ids in approval order. */
+  /** Ids of the approvers, in approval order. */
   value?: readonly string[] | null
   defaultValue?: readonly string[] | null
   onChange?: (ids: string[]) => void
@@ -24,8 +60,8 @@ export interface ApproverPickerProps<T extends Employee = Employee>
   excludeIds?: readonly string[]
 }
 
-/** Choose who approves a document, in order. Built on EmployeeLookup. */
-export function ApproverPicker<T extends Employee = Employee>(props: ApproverPickerProps<T>) {
+/** Choose who approves a document, in order. Search with a `Lookup` over your people `dataSource`. */
+export function ApproverPicker<T extends Approver = Approver>(props: ApproverPickerProps<T>) {
   const [field, rest] = useFieldProps(props)
   const { dataSource, value, defaultValue = [], onChange, maxApprovers, sequential = true, excludeIds = [], ...native } = rest
   const [raw, setRaw] = useControllableState<readonly string[] | null>({
@@ -79,7 +115,7 @@ export function ApproverPicker<T extends Employee = Employee>(props: ApproverPic
                 >
                   {sequential && <span className='erp-approver-picker__step'>{i + 1}</span>}
                   <span
-                    className='erp-lookup-avatar'
+                    className='erp-approver-picker__avatar'
                     aria-hidden='true'
                   >
                     {initials(nameOf(id))}
@@ -127,8 +163,11 @@ export function ApproverPicker<T extends Employee = Employee>(props: ApproverPic
             </ol>
           )}
           {editable && !full && (
-            <EmployeeLookup<T>
+            <Lookup<T>
               label='Add approver'
+              columns={approverColumns<T>()}
+              displayValue={(e) => e.name}
+              dropdownWidth='30rem'
               hideLabel
               placeholder='Add approver…'
               size={field.size}

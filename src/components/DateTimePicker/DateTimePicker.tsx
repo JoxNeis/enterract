@@ -7,6 +7,7 @@ import { DatePicker } from '../DatePicker'
 import { FieldDefaultsProvider, FormField, useFieldProps } from '../FormField'
 import { useLocale } from '../LocaleProvider'
 import { TimePicker } from '../TimePicker'
+import '../../styles/base.css'
 import './DateTimePicker.css'
 
 export interface DateTimePickerProps extends FieldProps, NativeDivProps {

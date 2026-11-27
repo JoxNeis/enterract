@@ -3,6 +3,7 @@ import { cx } from '../../utils/cx'
 import { formatNumber } from '../../utils/number'
 import { useLocale } from '../LocaleProvider'
 import { arcPath, barPath, linear, niceTicks, seriesColor } from './scale'
+import '../../styles/base.css'
 import './Chart.css'
 
 export interface ChartSeries {

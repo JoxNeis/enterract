@@ -1,5 +1,3 @@
-@import '../../styles/tokens.css';
-
 .erp-badge {
   --erp-badge-bg: var(--erp-color-primary);
   display: inline-flex;

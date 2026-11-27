@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { useOutsidePointerDown } from '../../utils/hooks'
 import { MenuList } from '../../internal/MenuList'
 import type { MenuItem } from '../MenuButton'
+import '../../styles/base.css'
 import './ContextMenu.css'
 
 export interface ContextMenuProps {

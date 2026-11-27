@@ -4,6 +4,7 @@ import type { Size } from '../../utils/types'
 import { Button, type ButtonVariant } from '../Button'
 import { Icon } from '../Icon'
 import { MenuButton, type MenuItem } from '../MenuButton'
+import '../Button/Button.css'
 import './SplitButton.css'
 
 export interface SplitButtonProps {

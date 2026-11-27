@@ -10,6 +10,7 @@ import { Icon } from '../Icon'
 import { getOptionId, Listbox, nextActiveIndex, typeaheadIndex } from '../Listbox'
 import { Popover } from '../Popover'
 import { Spinner } from '../Spinner'
+import '../../styles/base.css'
 import './Select.css'
 
 export interface SelectProps<K extends Key = string> extends FieldProps, ValueProps<K, undefined>, NativeDivProps {

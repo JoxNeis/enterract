@@ -7,6 +7,7 @@ import { Button } from '../Button'
 import { IconButton } from '../IconButton'
 import { useLocale } from '../LocaleProvider'
 import { layoutDay } from './layoutDay'
+import '../../styles/base.css'
 import './Scheduler.css'
 
 export interface SchedulerEvent {

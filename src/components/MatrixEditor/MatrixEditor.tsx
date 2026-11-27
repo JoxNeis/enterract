@@ -6,6 +6,7 @@ import { formatNumber, formatNumberForEdit, parseNumber } from '../../utils/numb
 import type { Option } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { useLocale } from '../LocaleProvider'
+import '../../styles/base.css'
 import './MatrixEditor.css'
 
 export type MatrixValue = Record<string, Record<string, number | null>>

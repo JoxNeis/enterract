@@ -1,5 +1,3 @@
-@import '../../styles/tokens.css';
-
 .erp-progress {
   --erp-progress-color: var(--erp-color-primary);
   display: flex;

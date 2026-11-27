@@ -9,6 +9,7 @@ import { useLocale } from '../LocaleProvider'
 import { NumberField } from '../NumberField'
 import { TreeGrid, type TreeGridColumn, type TreeGridRow } from '../TreeGrid'
 import { addChild, allIds, extendedQuantities, newBomId, removeLine, updateLine, type BomComponent } from './bom'
+import '../../styles/base.css'
 import './BomEditor.css'
 
 interface BomRowData {

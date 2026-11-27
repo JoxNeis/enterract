@@ -4,6 +4,7 @@ import type { FieldProps, Option } from '../../utils/types'
 import { useControllableState } from '../../utils/useControllableState'
 import { FieldDefaultsProvider, FormField, useFieldProps } from '../FormField'
 import { Select } from '../Select'
+import '../../styles/base.css'
 import './CascadingSelect.css'
 
 export interface CascadeLevel {

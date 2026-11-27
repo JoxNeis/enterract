@@ -6,6 +6,7 @@ import { FormField, useFieldProps } from '../FormField'
 import { IconButton } from '../IconButton'
 import { Listbox } from '../Listbox'
 import { SearchField } from '../SearchField'
+import '../../styles/base.css'
 import './DualListSelector.css'
 
 export interface DualListSelectorProps<K extends Key = string>

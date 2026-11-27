@@ -2,6 +2,7 @@ import type { ComponentProps, ReactNode } from 'react'
 import { cx } from '../../utils/cx'
 import type { Size } from '../../utils/types'
 import { documentStatuses, type StatusDefinition, type StatusTone } from './statuses'
+import '../../styles/base.css'
 import './StatusBadge.css'
 
 export interface StatusBadgeProps extends ComponentProps<'span'> {

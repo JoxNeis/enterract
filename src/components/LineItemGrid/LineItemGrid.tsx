@@ -4,6 +4,7 @@ import { currencyDigits, formatDecimal } from '../../utils/decimal'
 import { DataGrid, type DataGridProps, type FieldOf, type GridColumn, type GridRow } from '../DataGrid'
 import { useLocale } from '../LocaleProvider'
 import { computeTotals, lineAmount, type LineAmountInput } from './lineTotals'
+import '../DataGrid/DataGrid.css'
 import './LineItemGrid.css'
 
 export interface LineItemGridProps<TData, TMeta = undefined> extends Omit<DataGridProps<TData, TMeta>, 'showFooter'> {

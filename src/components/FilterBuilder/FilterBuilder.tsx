@@ -22,6 +22,7 @@ import {
   type FilterField,
   type FilterGroup,
 } from './filterModel'
+import '../../styles/base.css'
 import './FilterBuilder.css'
 
 export interface FilterBuilderProps extends Omit<ComponentProps<'div'>, 'onChange' | 'defaultValue'> {

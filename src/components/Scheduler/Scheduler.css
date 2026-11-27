@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-scheduler {
   display: flex;
   flex-direction: column;

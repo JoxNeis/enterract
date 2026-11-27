@@ -9,6 +9,7 @@ import { toText } from '../../utils/text'
 import { Icon } from '../Icon'
 import { useLocale } from '../LocaleProvider'
 import { Tooltip } from '../Tooltip'
+import '../../styles/base.css'
 import './ValueDisplay.css'
 
 export type ValueType = 'text' | 'number' | 'currency' | 'percent' | 'date' | 'datetime' | 'boolean'

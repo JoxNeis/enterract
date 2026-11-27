@@ -1,5 +1,3 @@
-@import '../Button/Button.css';
-
 .erp-icon-button.erp-button {
   width: var(--erp-control-height);
   padding: 0;

@@ -12,6 +12,7 @@ import { getOptionId, Listbox, nextActiveIndex } from '../Listbox'
 import { useLocale } from '../LocaleProvider'
 import { Popover } from '../Popover'
 import { timeOptions } from './timeOptions'
+import '../../styles/base.css'
 import './TimePicker.css'
 
 export interface TimePickerProps

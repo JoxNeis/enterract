@@ -1,5 +1,3 @@
-@import '../../styles/base.css';
-
 .erp-kanban {
   display: grid;
   grid-auto-columns: minmax(15rem, 1fr);

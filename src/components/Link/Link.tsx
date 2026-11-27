@@ -2,6 +2,7 @@ import type { ComponentProps, MouseEvent } from 'react'
 import { cx } from '../../utils/cx'
 import { flag } from '../../utils/flag'
 import { Icon } from '../Icon'
+import '../../styles/base.css'
 import './Link.css'
 
 export interface LinkProps extends ComponentProps<'a'> {
