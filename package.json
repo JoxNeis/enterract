@@ -1,9 +1,20 @@
 {
   "name": "enterract",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "React component library for ERP applications: forms, lookups, Excel-style data grids, workflow and approval controls.",
   "license": "Apache-2.0",
+  "author": "JoxNeis",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoxNeis/enterract.git"
+  },
+  "homepage": "https://github.com/JoxNeis/enterract#readme",
+  "bugs": {
+    "url": "https://github.com/JoxNeis/enterract/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "react",
     "components",
